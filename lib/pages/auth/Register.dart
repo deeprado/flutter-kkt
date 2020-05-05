@@ -47,14 +47,14 @@ class _RegisterPageState extends State<RegisterPage> {
     const oneSec = const Duration(seconds: 1);
 
     var callback = (timer) => {
-        setState(() {
-          if (countdownTime < 1) {
-            _timer.cancel();
-          } else {
-            countdownTime = countdownTime - 1;
-          }
-        })
-      };
+          setState(() {
+            if (countdownTime < 1) {
+              _timer.cancel();
+            } else {
+              countdownTime = countdownTime - 1;
+            }
+          })
+        };
     _timer = Timer.periodic(oneSec, callback);
   }
 
@@ -116,8 +116,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         mainAxisSize: MainAxisSize.max,
                         children: <Widget>[
-                          Container(
-                            width: 200,
+                          Expanded(
                             child: new TextField(
                               style: hintTips,
                               controller: _userCodeController,
@@ -128,7 +127,8 @@ class _RegisterPageState extends State<RegisterPage> {
                             ),
                           ),
                           Container(
-                            width: 120,
+                            padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                            alignment: Alignment.center,
                             child: GestureDetector(
                               onTap: () {
                                 if (countdownTime == 0) {
@@ -219,6 +219,9 @@ class _RegisterPageState extends State<RegisterPage> {
                               ),
                             )),
                       ),
+                    ),
+                    SizedBox(
+                      height: 30,
                     )
                   ],
                 ),

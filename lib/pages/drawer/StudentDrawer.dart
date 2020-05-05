@@ -198,7 +198,9 @@ class _StudentDrawerPageState extends State<StudentDrawerPage> {
         ),
         Divider(),
         Expanded(
-          child: Image.asset("assets/images/fmenu_banner.png"),
+          child: Container(
+            child: Image.asset("assets/images/fmenu_banner.png"),
+          ),
         )
       ],
     );

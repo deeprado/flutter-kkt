@@ -62,7 +62,6 @@ class _BankCellState extends State<BankCell> {
                 Column(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.all(10),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
@@ -78,7 +77,6 @@ class _BankCellState extends State<BankCell> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
                       child: Text(
                         '单选题',
                         style: TextStyle(fontSize: 20, color: Colors.black54),
@@ -91,7 +89,6 @@ class _BankCellState extends State<BankCell> {
                 Column(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.all(10),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
@@ -107,7 +104,6 @@ class _BankCellState extends State<BankCell> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
                       child: Text(
                         '单选题',
                         style: TextStyle(fontSize: 20, color: Colors.black54),
@@ -120,7 +116,6 @@ class _BankCellState extends State<BankCell> {
                 Column(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.all(10),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
@@ -136,7 +131,6 @@ class _BankCellState extends State<BankCell> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
                       child: Text(
                         '单选题',
                         style: TextStyle(fontSize: 20, color: Colors.black54),
@@ -149,7 +143,6 @@ class _BankCellState extends State<BankCell> {
                 Column(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.all(10),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
@@ -165,7 +158,6 @@ class _BankCellState extends State<BankCell> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
                       child: Text(
                         '单选题',
                         style: TextStyle(fontSize: 20, color: Colors.black54),

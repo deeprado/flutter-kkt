@@ -59,7 +59,11 @@ class _ExamCellState extends State<ExamCell> {
                 height: 50,
                 child: Image.asset("assets/images/exam_time.png"),
               ),
-              Text('2020-04-16 16:51:24至2020-04-23 16:51:24')
+              Text(
+                '2020-04-16 16:51:24至2020-04-23 16:51:24',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              )
             ],
           ),
           Row(
@@ -69,14 +73,19 @@ class _ExamCellState extends State<ExamCell> {
                 height: 50,
                 child: Image.asset("assets/images/exam_fen.png"),
               ),
-              Text('总计3.00分（限时60分钟）')
+              Text(
+                '总计3.00分（限时60分钟）',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              )
             ],
           ),
           SizedBox(
             height: 10,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          Wrap(
+            spacing: 5, //主轴上子控件的间距
+            runSpacing: 5,
             children: <Widget>[
               Container(
                 child: RaisedButton.icon(
@@ -174,6 +183,7 @@ class _ExamCellState extends State<ExamCell> {
                       print("图标按钮");
                     }),
               ),
+              
             ],
           ),
           SizedBox(

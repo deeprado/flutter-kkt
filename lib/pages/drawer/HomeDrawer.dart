@@ -10,7 +10,7 @@ class HomeDrawerPage extends StatefulWidget {
 class _HomeDrawerPageState extends State<HomeDrawerPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    var menus = Column(
       children: <Widget>[
         Row(
           children: <Widget>[
@@ -140,5 +140,10 @@ class _HomeDrawerPageState extends State<HomeDrawerPage> {
         )
       ],
     );
+    // var yy = SingleChildScrollView(
+    //   physics: BouncingScrollPhysics(),
+    //   child: xx,
+    // );
+    return menus;
   }
 }

@@ -225,11 +225,13 @@ class _HomePageState extends State<HomePage> {
                                             Radius.circular(5.0))),
                                     child: Text('step1'),
                                   ),
-                                  Expanded(child: Image.asset(
-                                    "assets/images/line.png",
-                                    fit: BoxFit.contain,
-                                    height: 100.0,
-                                  ),),
+                                  Expanded(
+                                    child: Image.asset(
+                                      "assets/images/line.png",
+                                      fit: BoxFit.contain,
+                                      height: 100.0,
+                                    ),
+                                  ),
                                 ],
                               ),
                             )),
@@ -312,11 +314,13 @@ class _HomePageState extends State<HomePage> {
                                             Radius.circular(5.0))),
                                     child: Text('step1'),
                                   ),
-                                  Expanded(child: Image.asset(
-                                    "assets/images/line.png",
-                                    fit: BoxFit.contain,
-                                    height: 100.0,
-                                  ),),
+                                  Expanded(
+                                    child: Image.asset(
+                                      "assets/images/line.png",
+                                      fit: BoxFit.contain,
+                                      height: 100.0,
+                                    ),
+                                  ),
                                 ],
                               ),
                             )),
@@ -400,11 +404,13 @@ class _HomePageState extends State<HomePage> {
                                             Radius.circular(5.0))),
                                     child: Text('step1'),
                                   ),
-                                  Expanded(child: Image.asset(
-                                    "assets/images/line.png",
-                                    fit: BoxFit.fitHeight,
-                                    height: 100.0,
-                                  ),)
+                                  Expanded(
+                                    child: Image.asset(
+                                      "assets/images/line.png",
+                                      fit: BoxFit.fitHeight,
+                                      height: 100.0,
+                                    ),
+                                  )
                                 ],
                               ),
                             )),
@@ -505,96 +511,16 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 40,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          width: 180,
-                          child: Image.asset("assets/images/zhanshi1.png"),
-                        ),
-                        Center(
-                          child: FLCopyableLabel(
-                            copyData: '党建知识考试',
-                            showMenu: true,
-                            child: Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text('党建知识考试',
-                                  style: TextStyle(fontSize: 16, height: 1.5)),
-                            ),
-                            afterCopyCallback: () {},
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          width: 180,
-                          child: Image.asset("assets/images/zhanshi2.png"),
-                        ),
-                        Center(
-                          child: FLCopyableLabel(
-                            copyData: '消防知识考试',
-                            showMenu: true,
-                            child: Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text('消防知识考试',
-                                  style: TextStyle(fontSize: 16, height: 1.5)),
-                            ),
-                            afterCopyCallback: () {},
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          width: 180,
-                          child: Image.asset("assets/images/zhanshi3.png"),
-                        ),
-                        Center(
-                          child: FLCopyableLabel(
-                            copyData: '旗舰员工培训考核',
-                            showMenu: true,
-                            child: Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text('旗舰员工培训考核',
-                                  style: TextStyle(fontSize: 16, height: 1.5)),
-                            ),
-                            afterCopyCallback: () {},
-                          ),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          width: 180,
-                          child: Image.asset("assets/images/zhanshi4.png"),
-                        ),
-                        Center(
-                          child: FLCopyableLabel(
-                            copyData: '职业卫生知识考核',
-                            showMenu: true,
-                            child: Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text('职业卫生知识考核',
-                                  style: TextStyle(fontSize: 16, height: 1.5)),
-                            ),
-                            afterCopyCallback: () {},
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
+                Container(
+                  child: GridView.count(
+                    shrinkWrap: true,
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10.0, //水平子 Widget 之间间距
+                    mainAxisSpacing: 10.0, //垂直子 Widget 之间间距
+                    padding: EdgeInsets.all(5),
+                    children: this._getList(),
+                  ),
+                )
               ]),
             ),
           ),
@@ -604,5 +530,46 @@ class _HomePageState extends State<HomePage> {
         child: new HomeDrawerPage(),
       ),
     );
+  }
+
+  List<Widget> _getList() {
+    List listData = [
+      {
+        'title': 'aaa',
+        'img': 'assets/images/zhanshi1.png',
+      },
+      {
+        'title': 'aaa',
+        'img': 'assets/images/zhanshi2.png',
+      },
+      {
+        'title': 'aaa',
+        'img': 'assets/images/zhanshi3.png',
+      },
+      {
+        'title': 'aaa',
+        'img': 'assets/images/zhanshi4.png',
+      },
+    ];
+    var tempList = listData.map((value) {
+      return Container(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Container(
+              color: Colors.blue,
+              child: Image.asset(value['img']),
+            ),
+            Expanded(
+              child: Container(
+                child: Text(value['title']),
+              ),
+            ),
+          ],
+        ),
+      );
+    });
+
+    return tempList.toList();
   }
 }
