@@ -225,11 +225,11 @@ class _HomePageState extends State<HomePage> {
                                             Radius.circular(5.0))),
                                     child: Text('step1'),
                                   ),
-                                  Image.asset(
+                                  Expanded(child: Image.asset(
                                     "assets/images/line.png",
                                     fit: BoxFit.contain,
                                     height: 100.0,
-                                  ),
+                                  ),),
                                 ],
                               ),
                             )),
@@ -299,6 +299,7 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.white,
                               height: 140.0,
                               child: Column(
+                                mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Container(
                                     padding:
@@ -311,11 +312,11 @@ class _HomePageState extends State<HomePage> {
                                             Radius.circular(5.0))),
                                     child: Text('step1'),
                                   ),
-                                  Image.asset(
+                                  Expanded(child: Image.asset(
                                     "assets/images/line.png",
                                     fit: BoxFit.contain,
                                     height: 100.0,
-                                  ),
+                                  ),),
                                 ],
                               ),
                             )),
@@ -378,6 +379,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         Expanded(
                             flex: 1,
@@ -385,6 +387,7 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.white,
                               height: 140.0,
                               child: Column(
+                                mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Container(
                                     padding:
@@ -397,11 +400,11 @@ class _HomePageState extends State<HomePage> {
                                             Radius.circular(5.0))),
                                     child: Text('step1'),
                                   ),
-                                  Image.asset(
+                                  Expanded(child: Image.asset(
                                     "assets/images/line.png",
-                                    fit: BoxFit.contain,
+                                    fit: BoxFit.fitHeight,
                                     height: 100.0,
-                                  ),
+                                  ),)
                                 ],
                               ),
                             )),
