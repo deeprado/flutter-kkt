@@ -560,7 +560,9 @@ class _ExamCreatePageState extends State<ExamCreatePage> {
                               '报名选项',
                               style: TextStyle(fontSize: 16),
                             ),
-                            Text('(如需设置自定义报名选项请前往PC端设置)'),
+                            Expanded(
+                              child: Text('(如需设置自定义报名选项请前往PC端设置)'),
+                            ),
                           ],
                         ),
                         Column(

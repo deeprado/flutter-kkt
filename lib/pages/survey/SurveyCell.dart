@@ -32,21 +32,6 @@ class _SurveyCellState extends State<SurveyCell> {
                   ),
                 ),
               ),
-              // Container(
-              //   padding: EdgeInsets.all(6),
-              //   alignment: Alignment.center,
-              //   decoration: BoxDecoration(
-              //       borderRadius: BorderRadius.all(Radius.circular(3)),
-              //       border:
-              //           new Border.all(color: Color(0xFFFF0000), width: 0.5)),
-              //   child: Text(
-              //     "已结束",
-              //     style: TextStyle(
-              //       fontSize: 14,
-              //       color: Colors.red,
-              //     ),
-              //   ),
-              // ),
             ],
           ),
           SizedBox(
@@ -59,10 +44,12 @@ class _SurveyCellState extends State<SurveyCell> {
                 height: 50,
                 child: Image.asset("assets/images/exam_time.png"),
               ),
-              Text(
-                '2020-04-16 16:51:24至2020-04-23 16:51:24',
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+              Expanded(
+                child: Text(
+                  '2020-04-16 16:51:24至2020-04-23 16:51:24',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
               )
             ],
           ),
@@ -73,10 +60,12 @@ class _SurveyCellState extends State<SurveyCell> {
                 height: 50,
                 child: Image.asset("assets/images/exam_fen.png"),
               ),
-              Text(
-                '总计3.00分（限时60分钟）',
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+              Expanded(
+                child: Text(
+                  '总计3.00分（限时60分钟）',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
               )
             ],
           ),
