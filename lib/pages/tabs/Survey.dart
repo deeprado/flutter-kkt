@@ -20,7 +20,7 @@ class _SurveyPageState extends State<SurveyPage> {
             IconButton(
               icon: Icon(Icons.add),
               onPressed: () {
-                Navigator.pushNamed(context, '/exam/create');
+                Navigator.pushNamed(context, '/survey/create');
               },
             ),
             IconButton(

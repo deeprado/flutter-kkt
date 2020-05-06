@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'tabs/Exam.dart';
 import 'tabs/Survey.dart';
-import 'tabs/Question.dart';
+import 'tabs/Bank.dart';
 import 'tabs/Student.dart';
 
 import 'drawer/TabDrawer.dart';
@@ -24,7 +24,7 @@ class _TabsState extends State<Tabs> {
   List _pageList = [
     ExamPage(),
     SurveyPage(),
-    QuestionPage(),
+    BankPage(),
     StudentPage(),
   ];
 

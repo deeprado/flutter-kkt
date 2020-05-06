@@ -20,6 +20,7 @@ import 'package:kkt/pages/question/QuesDetail.dart';
 import 'package:kkt/pages/question/QuesCreate.dart';
 
 import 'package:kkt/pages/exam/ExamCreate.dart';
+
 import 'package:kkt/pages/survey/SurveyCreate.dart';
 
 import 'package:kkt/widget/EditorPage.dart';
@@ -33,16 +34,16 @@ final routes = {
   '/about': (context) => AboutPage(),
   '/feedback': (context) => FeedbackPage(),
   '/profile': (context) => ProfilePage(),
+  '/editor': (context) => EditorPage(),
   '/search': (context) => SearchPage(),
   '/login': (context) => LoginPage(),
   '/register': (context) => RegisterPage(),
   '/forgetPassword': (context) => ForgetPasswordPage(),
   '/exam/create': (context) => ExamCreatePage(),
-  '/survey/create': (context) => SurveyCreatePage(),
-  '/editor': (context) => EditorPage(),
   '/ques/list': (context) => QuesListPage(),
   '/ques/detial': (context) => QuesDetailPage(),
   '/ques/create': (context) => QuesCreatePage(),
+  '/survey/create': (context) => SurveyCreatePage(),
 };
 
 // 固定写法

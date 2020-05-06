@@ -28,7 +28,17 @@ class EditorPageState extends State<EditorPage> {
     // Note that the editor requires special `ZefyrScaffold` widget to be
     // one of its parents.
     return Scaffold(
-      appBar: AppBar(title: Text("Editor page")),
+      appBar: AppBar(
+        title: Text("编辑器"),
+        // actions: <Widget>[
+        //   IconButton(
+        //     icon: Icon(Icons.done),
+        //     onPressed: () {
+        //       Navigator.of(context).pop();
+        //     },
+        //   ),
+        // ],
+      ),
       body: ZefyrScaffold(
         child: ZefyrEditor(
           padding: EdgeInsets.all(16),
