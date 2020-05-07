@@ -34,6 +34,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, //去掉debug图标
       initialRoute: '/', //初始化的时候加载的路由
       onGenerateRoute: onGenerateRoute,
+      theme: new ThemeData(
+        brightness: Brightness.light,
+        primaryColor: Colors.blue,
+        accentColor: Colors.cyan[600],
+      ),
     );
   }
 }

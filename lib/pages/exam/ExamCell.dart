@@ -102,6 +102,7 @@ class _ExamCellState extends State<ExamCell> {
                     label: Text(
                       '考题管理',
                       style: TextStyle(
+                        color: Theme.of(context).accentColor,
                         fontSize: 14,
                       ),
                     ),
@@ -126,6 +127,7 @@ class _ExamCellState extends State<ExamCell> {
                     label: Text(
                       '考生管理',
                       style: TextStyle(
+                        color: Theme.of(context).accentColor,
                         fontSize: 14,
                       ),
                     ),
@@ -150,6 +152,7 @@ class _ExamCellState extends State<ExamCell> {
                     label: Text(
                       '排行榜',
                       style: TextStyle(
+                        color: Theme.of(context).accentColor,
                         fontSize: 14,
                       ),
                     ),
@@ -174,6 +177,7 @@ class _ExamCellState extends State<ExamCell> {
                     label: Text(
                       '分享考试',
                       style: TextStyle(
+                        color: Theme.of(context).accentColor,
                         fontSize: 14,
                       ),
                     ),
