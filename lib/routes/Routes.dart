@@ -26,6 +26,7 @@ import 'package:kkt/pages/student/StudentCreate.dart';
 import 'package:kkt/pages/survey/SurveyCreate.dart';
 
 import 'package:kkt/widget/EditorPage.dart';
+import 'package:kkt/pages/demo/FilePage.dart';
 
 // 配置路由
 final routes = {
@@ -47,6 +48,7 @@ final routes = {
   '/ques/create': (context) => QuesCreatePage(),
   '/survey/create': (context) => SurveyCreatePage(),
   '/student/create': (context) => StudentCreatePage(),
+  '/demo/file': (context) => FilePage(),
 };
 
 // 固定写法

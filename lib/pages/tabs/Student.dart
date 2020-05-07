@@ -1,12 +1,14 @@
-import 'dart:html';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:dio/dio.dart';
 
 import 'package:kkt/pages/student/StudentCell.dart';
-
 import 'package:kkt/pages/drawer/StudentDrawer.dart';
 
 /// 考生
@@ -23,6 +25,17 @@ class _StudentPageState extends State<StudentPage> {
   var _fieldNameController = new TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    var permission =
+        PermissionHandler().checkPermissionStatus(PermissionGroup.storage);
+    print("permission status is " + permission.toString());
+    PermissionHandler().requestPermissions(<PermissionGroup>[
+      PermissionGroup.storage, // 在这里添加需要的权限
+    ]);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -35,9 +48,10 @@ class _StudentPageState extends State<StudentPage> {
             },
           ),
           IconButton(
-            icon: Icon(Icons.label_important),
+            icon: Icon(Icons.file_download),
             onPressed: () {
-              Navigator.pushNamed(context, '/student/import');
+              print('导入');
+              Navigator.pushNamed(context, '/demo/file');
             },
           ),
           IconButton(
@@ -64,7 +78,7 @@ class _StudentPageState extends State<StudentPage> {
                       child: RaisedButton(
                           child: Text('下载二维码'),
                           onPressed: () {
-                            print('下载');
+                            _saveImg();
                           }),
                     ),
                   ],
@@ -209,7 +223,7 @@ class _StudentPageState extends State<StudentPage> {
     return directory.path;
   }
 
-  getExternalStorageDirectory() async {
+  save() async {
     // 获取存储路径
     var _localPath = (await _findLocalPath()) + '/Download';
 
@@ -220,10 +234,14 @@ class _StudentPageState extends State<StudentPage> {
     if (!hasExisted) {
       savedDir.create();
     }
-    return "asdfs";
   }
 
-  getApplicationSupportDirectory() async {
-    return "asdfs";
+  _saveImg() async {
+    var response = await Dio().get(
+        "https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=a62e824376d98d1069d40a31113eb807/838ba61ea8d3fd1fc9c7b6853a4e251f94ca5f46.jpg",
+        options: Options(responseType: ResponseType.bytes));
+    final result =
+        await ImageGallerySaver.saveImage(Uint8List.fromList(response.data));
+    print(result);
   }
 }
