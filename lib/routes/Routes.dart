@@ -21,6 +21,8 @@ import 'package:kkt/pages/question/QuesCreate.dart';
 
 import 'package:kkt/pages/exam/ExamCreate.dart';
 
+import 'package:kkt/pages/student/StudentCreate.dart';
+
 import 'package:kkt/pages/survey/SurveyCreate.dart';
 
 import 'package:kkt/widget/EditorPage.dart';
@@ -44,6 +46,7 @@ final routes = {
   '/ques/detial': (context) => QuesDetailPage(),
   '/ques/create': (context) => QuesCreatePage(),
   '/survey/create': (context) => SurveyCreatePage(),
+  '/student/create': (context) => StudentCreatePage(),
 };
 
 // 固定写法

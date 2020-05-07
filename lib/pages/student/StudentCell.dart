@@ -25,8 +25,8 @@ class _StudentCellState extends State<StudentCell> {
                         height: 60,
                         width: 60),
                   ),
-                  title: Text("xxxx"),
-                  subtitle: Text("xxxxxxx"),
+                  title: Text("姓名"),
+                  subtitle: Text("13684511412"),
                 ),
               ),
               Container(

@@ -1,5 +1,4 @@
-
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class StudentCreatePage extends StatefulWidget {
   StudentCreatePage({Key key}) : super(key: key);
@@ -11,8 +10,12 @@ class StudentCreatePage extends StatefulWidget {
 class _StudentCreatePageState extends State<StudentCreatePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: Text('添加问卷'),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('添加考生'),
+        ),
+        body: Center(
+          child: Text('添加考生'),
+        ));
   }
 }
