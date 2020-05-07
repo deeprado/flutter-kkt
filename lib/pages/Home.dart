@@ -77,15 +77,14 @@ class _HomePageState extends State<HomePage> {
             sliver: new SliverList(
               delegate: new SliverChildListDelegate(<Widget>[
                 Row(
+                  mainAxisSize: MainAxisSize.max,
                   children: <Widget>[
                     Expanded(
                       flex: 1,
                       child: Container(
                         color: Colors.white,
-                        height: 300.0,
                         child: Image.asset(
                           "assets/images/index_banner.png",
-                          fit: BoxFit.contain,
                         ),
                       ),
                     )
@@ -108,7 +107,12 @@ class _HomePageState extends State<HomePage> {
                               height: 54.0,
                               width: 54.0,
                             ),
-                            Text('全网加速')
+                            Text(
+                              '极速创建',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(51, 51, 51, 1),
+                                  fontSize: 13),
+                            )
                           ],
                         ),
                       ),
@@ -127,7 +131,10 @@ class _HomePageState extends State<HomePage> {
                               height: 54.0,
                               width: 54.0,
                             ),
-                            Text('全网加速')
+                            Text('便捷管理',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(51, 51, 51, 1),
+                                    fontSize: 13)),
                           ],
                         ),
                       ),
@@ -146,7 +153,10 @@ class _HomePageState extends State<HomePage> {
                               height: 54.0,
                               width: 54.0,
                             ),
-                            Text('全网加速')
+                            Text('数据统计',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(51, 51, 51, 1),
+                                    fontSize: 13)),
                           ],
                         ),
                       ),
@@ -165,7 +175,10 @@ class _HomePageState extends State<HomePage> {
                               height: 54.0,
                               width: 54.0,
                             ),
-                            Text('全网加速')
+                            Text('在线考试',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(51, 51, 51, 1),
+                                    fontSize: 13)),
                           ],
                         ),
                       ),
@@ -184,7 +197,10 @@ class _HomePageState extends State<HomePage> {
                               height: 54.0,
                               width: 54.0,
                             ),
-                            Text('全网加速')
+                            Text('全网加速',
+                                style: TextStyle(
+                                    color: Color.fromRGBO(51, 51, 51, 1),
+                                    fontSize: 13)),
                           ],
                         ),
                       ),
@@ -194,316 +210,362 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 10,
                   child: Container(
-                    color: Colors.black12,
+                    color: Color.fromRGBO(247, 248, 250, 1),
                   ),
                 ),
-                Column(
-                  children: <Widget>[
-                    SizedBox(
-                      height: 20.0,
-                      child: Container(
-                        color: Colors.white,
+                Container(
+                  padding: EdgeInsets.fromLTRB(5, 10, 10, 10),
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: 20.0,
+                        child: Container(
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Expanded(
-                            flex: 1,
+                      Row(
+                        children: <Widget>[
+                          Expanded(
+                              flex: 2,
+                              child: Container(
+                                color: Colors.white,
+                                height: 140.0,
+                                child: Column(
+                                  children: <Widget>[
+                                    Container(
+                                      padding: EdgeInsets.fromLTRB(
+                                          2.0, 5.0, 2.0, 5.0),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Color.fromRGBO(207, 230, 253, 1),
+                                          border: Border.all(
+                                              color: Color.fromRGBO(
+                                                  0, 155, 249, 1),
+                                              width: 1.0),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(5.0))),
+                                      child: Text(
+                                        'Step1',
+                                        style: TextStyle(
+                                            color:
+                                                Color.fromRGBO(0, 155, 249, 1)),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Image.asset(
+                                        "assets/images/line.png",
+                                        fit: BoxFit.contain,
+                                        height: 100.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )),
+                          Expanded(
+                            flex: 7,
                             child: Container(
-                              color: Colors.white,
                               height: 140.0,
                               child: Column(
                                 children: <Widget>[
-                                  Container(
-                                    padding:
-                                        EdgeInsets.fromLTRB(2.0, 5.0, 2.0, 5.0),
-                                    decoration: BoxDecoration(
-                                        color: Colors.blue,
-                                        border: Border.all(
-                                            color: Colors.pink, width: 1.0),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5.0))),
-                                    child: Text('step1'),
+                                  Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                      color: Colors.white,
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        '创建考试',
+                                        style: TextStyle(
+                                          color: Color.fromRGBO(51, 51, 51, 1),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                   Expanded(
-                                    child: Image.asset(
-                                      "assets/images/line.png",
-                                      fit: BoxFit.contain,
-                                      height: 100.0,
+                                    flex: 3,
+                                    child: Container(
+                                      color: Colors.white,
+                                      child: Text(
+                                        '3分钟完成考试创建，极简操作，节约时间，考试模式多样，考前预约，阅卷高效',
+                                        maxLines: 3,
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            height: 1.8,
+                                            color: Colors.black54),
+                                      ),
                                     ),
                                   ),
                                 ],
                               ),
-                            )),
-                        Expanded(
-                          flex: 6,
-                          child: Container(
-                            height: 140.0,
-                            child: Column(
-                              children: <Widget>[
-                                Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                    color: Colors.white,
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      '创建考试',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 3,
-                                  child: Container(
-                                    color: Colors.white,
-                                    child: Text(
-                                      '创建考试创建考试创建考试创建考试创建考试',
-                                      maxLines: 3,
-                                    ),
-                                  ),
-                                ),
-                              ],
                             ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 4,
-                          child: Container(
-                            color: Colors.white,
-                            height: 140.0,
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                  child: Image.asset(
-                                      "assets/images/index_step1.png"),
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                      child: Container(
-                        color: Colors.white,
-                      ),
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Expanded(
-                            flex: 1,
+                          Expanded(
+                            flex: 5,
                             child: Container(
                               color: Colors.white,
                               height: 140.0,
                               child: Column(
-                                mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Container(
-                                    padding:
-                                        EdgeInsets.fromLTRB(2.0, 5.0, 2.0, 5.0),
-                                    decoration: BoxDecoration(
-                                        color: Colors.blue,
-                                        border: Border.all(
-                                            color: Colors.pink, width: 1.0),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5.0))),
-                                    child: Text('step1'),
-                                  ),
-                                  Expanded(
                                     child: Image.asset(
-                                      "assets/images/line.png",
-                                      fit: BoxFit.contain,
-                                      height: 100.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )),
-                        Expanded(
-                          flex: 6,
-                          child: Container(
-                            height: 140.0,
-                            child: Column(
-                              children: <Widget>[
-                                Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                    color: Colors.white,
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      '创建考试',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 3,
-                                  child: Container(
-                                    color: Colors.white,
-                                    child: Text(
-                                      '创建考试创建考试创建考试创建考试创建考试',
-                                      maxLines: 3,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          flex: 4,
-                          child: Container(
-                            color: Colors.white,
-                            height: 140.0,
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                  child: Image.asset(
-                                      "assets/images/index_step1.png"),
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                      child: Container(
-                        color: Colors.white,
-                      ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Expanded(
-                            flex: 1,
-                            child: Container(
-                              color: Colors.white,
-                              height: 140.0,
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Container(
-                                    padding:
-                                        EdgeInsets.fromLTRB(2.0, 5.0, 2.0, 5.0),
-                                    decoration: BoxDecoration(
-                                        color: Colors.blue,
-                                        border: Border.all(
-                                            color: Colors.pink, width: 1.0),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5.0))),
-                                    child: Text('step1'),
-                                  ),
-                                  Expanded(
-                                    child: Image.asset(
-                                      "assets/images/line.png",
-                                      fit: BoxFit.fitHeight,
-                                      height: 100.0,
-                                    ),
+                                        "assets/images/index_step1.png"),
                                   )
                                 ],
                               ),
-                            )),
-                        Expanded(
-                          flex: 6,
-                          child: Container(
-                            height: 140.0,
-                            child: Column(
-                              children: <Widget>[
-                                Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                    color: Colors.white,
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      '创建考试',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20,
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                        child: Container(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Expanded(
+                              flex: 2,
+                              child: Container(
+                                color: Colors.white,
+                                height: 140.0,
+                                child: Column(
+                                  children: <Widget>[
+                                    Container(
+                                      padding: EdgeInsets.fromLTRB(
+                                          2.0, 5.0, 2.0, 5.0),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Color.fromRGBO(207, 230, 253, 1),
+                                          border: Border.all(
+                                              color: Color.fromRGBO(
+                                                  0, 155, 249, 1),
+                                              width: 1.0),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(5.0))),
+                                      child: Text(
+                                        'Step2',
+                                        style: TextStyle(
+                                            color:
+                                                Color.fromRGBO(0, 155, 249, 1)),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Image.asset(
+                                        "assets/images/line.png",
+                                        fit: BoxFit.contain,
+                                        height: 100.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )),
+                          Expanded(
+                            flex: 7,
+                            child: Container(
+                              height: 140.0,
+                              child: Column(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                      color: Colors.white,
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        '添加考题',
+                                        style: TextStyle(
+                                          color: Color.fromRGBO(51, 51, 51, 1),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  flex: 3,
-                                  child: Container(
-                                    color: Colors.white,
-                                    child: Text(
-                                      '创建考试创建考试创建考试创建考试创建考试',
-                                      maxLines: 3,
+                                  Expanded(
+                                    flex: 3,
+                                    child: Container(
+                                      color: Colors.white,
+                                      child: Text(
+                                        '图片，音频考题快速上传，自建考试题库，自由编辑，更支持一键高速上传，省时更省心',
+                                        maxLines: 3,
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            height: 1.8,
+                                            color: Colors.black54),
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 4,
-                          child: Container(
-                            color: Colors.white,
-                            height: 140.0,
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                  child: Image.asset(
-                                      "assets/images/index_step1.png"),
-                                )
-                              ],
+                          Expanded(
+                            flex: 5,
+                            child: Container(
+                              color: Colors.white,
+                              height: 140.0,
+                              child: Column(
+                                children: <Widget>[
+                                  Container(
+                                    child: Image.asset(
+                                        "assets/images/index_step2.png"),
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                        )
-                      ],
-                    ),
-                    Container(
-                      color: Colors.white,
-                      child: Center(
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20.0,
                         child: Container(
-                          width: 200,
-                          child: RaisedButton(
-                            child: Text('免费创建'),
-                            textColor: Colors.white,
-                            color: Colors.blue,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
-                            onPressed: () {
-                              print("普通按钮");
-                            },
+                          color: Colors.white,
+                        ),
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Expanded(
+                              flex: 2,
+                              child: Container(
+                                color: Colors.white,
+                                height: 140.0,
+                                child: Column(
+                                  children: <Widget>[
+                                    Container(
+                                      padding: EdgeInsets.fromLTRB(
+                                          2.0, 5.0, 2.0, 5.0),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Color.fromRGBO(207, 230, 253, 1),
+                                          border: Border.all(
+                                              color: Color.fromRGBO(
+                                                  0, 155, 249, 1),
+                                              width: 1.0),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(5.0))),
+                                      child: Text(
+                                        'Step3',
+                                        style: TextStyle(
+                                            color:
+                                                Color.fromRGBO(0, 155, 249, 1)),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Image.asset(
+                                        "assets/images/line.png",
+                                        fit: BoxFit.contain,
+                                        height: 100.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )),
+                          Expanded(
+                            flex: 7,
+                            child: Container(
+                              height: 140.0,
+                              child: Column(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                      color: Colors.white,
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        '分享考试',
+                                        style: TextStyle(
+                                          color: Color.fromRGBO(51, 51, 51, 1),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    flex: 3,
+                                    child: Container(
+                                      color: Colors.white,
+                                      child: Text(
+                                        '渠道分享模式，不受平台限制，自动生成二维码，扫码快速进入，强化移动考试',
+                                        maxLines: 3,
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            height: 1.8,
+                                            color: Colors.black54),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 5,
+                            child: Container(
+                              color: Colors.white,
+                              height: 140.0,
+                              child: Column(
+                                children: <Widget>[
+                                  Container(
+                                    child: Image.asset(
+                                        "assets/images/index_step3.png"),
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      Container(
+                        color: Colors.white,
+                        child: Center(
+                          child: Container(
+                            height: 36,
+                            width: ScreenUtil.screenWidth / 2,
+                            child: RaisedButton(
+                              child: Text(
+                                '免费创建',
+                                style: TextStyle(fontSize: 12),
+                              ),
+                              textColor: Colors.white,
+                              color: Color.fromRGBO(72, 133, 247, 1),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              onPressed: () {
+                                print("普通按钮");
+                              },
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                      child: Container(
-                        color: Colors.white,
+                      SizedBox(
+                        height: 20.0,
+                        child: Container(
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                  ],
-                )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                  child: Container(
+                    color: Color.fromRGBO(247, 248, 250, 1),
+                  ),
+                ),
               ]),
             ),
           ),
           new SliverPadding(
-            padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
+            padding: const EdgeInsets.fromLTRB(10, 40, 10, 20),
             sliver: new SliverList(
               delegate: new SliverChildListDelegate(<Widget>[
                 Container(
                   color: Colors.white,
                   child: Center(
                     child: Container(
-                      width: 300,
+                      width: ScreenUtil.screenWidth / 2,
                       child: Image.asset("assets/images/scene.png"),
                     ),
                   ),
@@ -520,7 +582,21 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.all(5),
                     children: this._getList(),
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Container(
+                  child: Center(
+                    child: Text(
+                      ' -- 已经到底了 -- ',
+                      style: TextStyle(color: Colors.black54),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
               ]),
             ),
           ),
@@ -535,19 +611,19 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _getList() {
     List listData = [
       {
-        'title': 'aaa',
+        'title': '党建知识考试',
         'img': 'assets/images/zhanshi1.png',
       },
       {
-        'title': 'aaa',
+        'title': '消防安全知识考试',
         'img': 'assets/images/zhanshi2.png',
       },
       {
-        'title': 'aaa',
+        'title': '旗舰员工培训考核',
         'img': 'assets/images/zhanshi3.png',
       },
       {
-        'title': 'aaa',
+        'title': '职业卫生知识考核',
         'img': 'assets/images/zhanshi4.png',
       },
     ];
@@ -557,12 +633,19 @@ class _HomePageState extends State<HomePage> {
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             Container(
-              color: Colors.blue,
-              child: Image.asset(value['img']),
+              width: (ScreenUtil.screenWidth - 60) / 2,
+              child: AspectRatio(
+                aspectRatio: 15 / 12,
+                child: Image.asset(value['img']),
+              ),
             ),
             Expanded(
+              flex: 1,
               child: Container(
-                child: Text(value['title']),
+                child: Text(
+                  value['title'],
+                  style: TextStyle(height: 1.5),
+                ),
               ),
             ),
           ],

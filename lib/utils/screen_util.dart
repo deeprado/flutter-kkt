@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ScreenUtil {
@@ -18,6 +17,8 @@ class ScreenUtil {
 
   static double _textScaleFactor;
 
+  static bool _inited;
+
   ScreenUtil({int width, int height}) {
     _designWidth = width;
     _designHeight = height;
@@ -28,14 +29,17 @@ class ScreenUtil {
   }
 
   void init(BuildContext context) {
-    MediaQueryData mediaQuery = MediaQuery.of(context);
-    _mediaQueryData = mediaQuery;
-    _pixelRatio = mediaQuery.devicePixelRatio;
-    _screenWidth = mediaQuery.size.width;
-    _screenHeight = mediaQuery.size.height;
-    _statusBarHeight = mediaQuery.padding.top;
-    _bottomBarHeight = _mediaQueryData.padding.bottom;
-    _textScaleFactor = mediaQuery.textScaleFactor;
+    // if (!_inited) {
+      MediaQueryData mediaQuery = MediaQuery.of(context);
+      _mediaQueryData = mediaQuery;
+      _pixelRatio = mediaQuery.devicePixelRatio;
+      _screenWidth = mediaQuery.size.width;
+      _screenHeight = mediaQuery.size.height;
+      _statusBarHeight = mediaQuery.padding.top;
+      _bottomBarHeight = _mediaQueryData.padding.bottom;
+      _textScaleFactor = mediaQuery.textScaleFactor;
+      _inited = true;
+    // }
   }
 
   static MediaQueryData get mediaQueryData => _mediaQueryData;
