@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:kkt/app/OsApplication.dart';
-import 'package:kkt/event/LoginEvent.dart';
+// import 'package:kkt/app/OsApplication.dart';
+// import 'package:kkt/event/LoginEvent.dart';
 import 'package:kkt/utils/WidgetsUtils.dart';
-import 'package:kkt/utils/cache/SpUtils.dart';
-import 'package:kkt/utils/net/Api.dart';
-import 'package:kkt/utils/net/Http.dart';
+// import 'package:kkt/utils/cache/SpUtils.dart';
+// import 'package:kkt/utils/net/Api.dart';
+// import 'package:kkt/utils/net/Http.dart';
 import 'package:kkt/utils/toast/TsUtils.dart';
 
-import 'package:kkt/widget/PartialConsume.dart';
-import 'package:kkt/widget/CountDownTimeModel.dart';
-import 'package:kkt/widget/VercodeTimer.dart';
+// import 'package:kkt/widget/PartialConsume.dart';
+// import 'package:kkt/widget/CountDownTimeModel.dart';
+// import 'package:kkt/widget/VercodeTimer.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({Key key}) : super(key: key);

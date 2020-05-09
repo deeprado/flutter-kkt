@@ -60,8 +60,6 @@ class _ExamCreatePageState extends State<ExamCreatePage> {
   // 考生结束
   var showAnswerBeforeEnd = 1;
 
-  // 图片
-  File _image;
   // 当图片上传成功后，记录当前上传的图片在服务器中的位置
   List imgFilePaths = [];
 
@@ -1029,9 +1027,9 @@ class _ExamCreatePageState extends State<ExamCreatePage> {
     var tempImg = await ImagePicker.pickImage(source: source);
     imgFilePaths.add(tempImg);
     setState(() {
-      _image = tempImg;
       imgFilePaths = imgFilePaths;
     });
+    return tempImg.toString();
   }
 
   Widget initImgPick() {
@@ -1098,7 +1096,9 @@ class _ExamCreatePageState extends State<ExamCreatePage> {
     var respone = await Http.upload("/upload", formdata: formdata);
     if (respone.statusCode == 200) {
       Fluttertoast.showToast(
-          msg: "图片上传成功", gravity: ToastGravity.CENTER, textColor: Colors.grey);
+          msg: "图片上传成功", 
+          gravity: ToastGravity.CENTER, 
+          textColor: Colors.grey);
     }
   }
 }
