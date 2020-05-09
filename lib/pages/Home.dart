@@ -47,6 +47,12 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: <Widget>[
           IconButton(
+            icon: Icon(Icons.share),
+            onPressed: () {
+              Navigator.pushNamed(context, '/demo/fluwx');
+            },
+          ),
+          IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
               Navigator.pushNamed(context, '/exam/create');

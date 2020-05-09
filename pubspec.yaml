@@ -46,6 +46,7 @@ dependencies:
   permission_handler: ^3.1.0
   progress_dialog: ^1.1.0+1
   image_gallery_saver : ^1.2.2
+  fluwx: ^2.0.9
 
 dev_dependencies:
   flutter_test:

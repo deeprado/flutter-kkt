@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluwx/fluwx.dart';
 
 import 'routes/Routes.dart';
 
@@ -26,7 +27,32 @@ void main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => new _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  @override
+  void initState() {
+    super.initState();
+    _initFluwx();
+  }
+
+  _initFluwx() async {
+    await registerWxApi(
+        appId: "wxd930ea5d5a258f4f",
+        doOnAndroid: true,
+        doOnIOS: true,
+        universalLink: "https://your.univerallink.com/link/");
+    var result = await isWeChatInstalled;
+    print("is installed $result");
+  }
+
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> initPlatformState() async {}
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

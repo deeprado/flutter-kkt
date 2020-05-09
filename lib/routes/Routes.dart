@@ -1,5 +1,18 @@
 import 'package:flutter/material.dart';
 
+import 'package:kkt/pages/fluwx/auth_by_qr_code_page.dart';
+import 'package:kkt/pages/fluwx/launch_mini_program_page.dart';
+import 'package:kkt/pages/fluwx/pay_page.dart';
+import 'package:kkt/pages/fluwx/send_auth.dart';
+import 'package:kkt/pages/fluwx/share_image_page.dart';
+import 'package:kkt/pages/fluwx/share_mini_program.dart';
+import 'package:kkt/pages/fluwx/share_music.dart';
+import 'package:kkt/pages/fluwx/share_text.dart';
+import 'package:kkt/pages/fluwx/share_video_page.dart';
+import 'package:kkt/pages/fluwx/share_web_page.dart';
+import 'package:kkt/pages/fluwx/sign_auto_deduct_page.dart';
+import 'package:kkt/pages/fluwx/subscribe_message_page.dart';
+
 import 'package:kkt/pages/Tabs.dart';
 import 'package:kkt/pages/Home.dart';
 
@@ -25,8 +38,9 @@ import 'package:kkt/pages/student/StudentCreate.dart';
 
 import 'package:kkt/pages/survey/SurveyCreate.dart';
 
-import 'package:kkt/widget/EditorPage.dart';
+import 'package:kkt/pages/demo/EditorPage.dart';
 import 'package:kkt/pages/demo/FilePage.dart';
+import 'package:kkt/pages/demo/ShareSelectorPage.dart';
 
 // 配置路由
 final routes = {
@@ -49,6 +63,21 @@ final routes = {
   '/survey/create': (context) => SurveyCreatePage(),
   '/student/create': (context) => StudentCreatePage(),
   '/demo/file': (context) => FilePage(),
+  '/demo/fluwx': (context) => ShareSelectorPage(),
+
+
+  "/fluwx/shareText": (context) => ShareTextPage(),
+  "/fluwx/shareImage": (context) => ShareImagePage(),
+  "/fluwx/shareWebPage": (context) => ShareWebPagePage(),
+  "/fluwx/shareMusic": (context) => ShareMusicPage(),
+  "/fluwx/shareVideo": (context) => ShareVideoPage(),
+  "/fluwx/sendAuth": (context) => SendAuthPage(),
+  "/fluwx/shareMiniProgram": (context) => ShareMiniProgramPage(),
+  "/fluwx/pay": (context) => PayPage(),
+  "/fluwx/launchMiniProgram": (context) => LaunchMiniProgramPage(),
+  "/fluwx/subscribeMessage": (ctx) => SubscribeMessagePage(),
+  "/fluwx/AuthByQRCode": (ctx) => AuthByQRCodePage(),
+  '/fluwx/AutoDeduct': (ctx) => SignAutoDeductPage(),
 };
 
 // 固定写法
