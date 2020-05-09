@@ -16,8 +16,8 @@ class _StudentDrawerPageState extends State<StudentDrawerPage> {
           children: <Widget>[
             Expanded(
                 child: UserAccountsDrawerHeader(
-              accountName: Text("大地老师"),
-              accountEmail: Text("dadi@itying.com"),
+              accountName: Text("deepado"),
+              accountEmail: Text("2746143402@qq.com"),
               currentAccountPicture: CircleAvatar(
                 backgroundImage:
                     NetworkImage("https://www.itying.com/images/flutter/3.png"),

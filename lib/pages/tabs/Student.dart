@@ -2,11 +2,13 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
+
 // import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:dio/dio.dart';
+import 'package:kkt/utils/screen_util.dart';
 
 import 'package:kkt/pages/student/StudentCell.dart';
 import 'package:kkt/pages/drawer/StudentDrawer.dart';
@@ -55,26 +57,87 @@ class _StudentPageState extends State<StudentPage> {
             },
           ),
           IconButton(
-            icon: Icon(Icons.label_important),
+            icon: Icon(Icons.help),
             onPressed: () {
               showDialog(
                 context: context,
                 barrierDismissible: true,
                 child: SimpleDialog(
-                  title: const Text('请选择你的性别'),
+                  title: const Text('操作提示'),
                   children: <Widget>[
-                    Text('如何使用考生账号？'),
-                    Text('第一步：维护考生字段，添加考生账号信息'),
-                    Text('第二步：将主页链接或地址发送给考生'),
-                    Text('第三步：考生扫描进入主页页面，填写对应考生信息绑定'),
-                    Text('考生主页链接：'),
-                    Text('http://ti.aakuai.top/wx/group/index/UGJaYggw'),
-                    Text('扫描二维码进入考生主页'),
-                    Container(
-                      child: Image.network(
-                          'https://flutterchina.club/images/assets-and-images/icon.png'),
+                    Center(
+                      child: Text(
+                        '如何使用考生账号？',
+                        style: TextStyle(fontSize: 16, height: 1.5),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Center(
+                      child: Text(
+                        '第一步：维护考生字段，添加考生账号信息',
+                        style: TextStyle(fontSize: 16, height: 1.5),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Center(
+                      child: Text(
+                        '第二步：将主页链接或地址发送给考生',
+                        style: TextStyle(fontSize: 16, height: 1.5),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Center(
+                      child: Text(
+                        '第三步：考生扫描进入主页页面，填写对应考生信息绑定',
+                        style: TextStyle(fontSize: 16, height: 1.5),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Center(
+                      child: Text(
+                        '考生主页链接：',
+                        style: TextStyle(fontSize: 16, height: 1.5),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Center(
+                      child: Text(
+                        'http://ti.aakuai.top/wx/group/index/UGJaYggw',
+                        style: TextStyle(fontSize: 16, height: 1.5),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Center(
+                      child: Text(
+                        '扫描二维码进入考生主页',
+                        style: TextStyle(fontSize: 16, height: 1.5),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
                     ),
                     Container(
+                      // color: Colors.blue,
+                      child: Image.network(
+                        'https://flutterchina.club/images/assets-and-images/icon.png',
+                        width: 200,
+                        height: 200,
+                      ),
+                    ),
+                    Container(
+                      width: 100,
                       child: RaisedButton(
                           child: Text('下载二维码'),
                           onPressed: () {
@@ -87,7 +150,7 @@ class _StudentPageState extends State<StudentPage> {
             },
           ),
           IconButton(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.announcement),
             onPressed: () {
               showDialog(
                   context: context,

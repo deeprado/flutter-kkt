@@ -42,7 +42,7 @@ class _SurveyCreatePageState extends State<SurveyCreatePage> {
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black),
+                        color: Colors.black87),
                   ),
                 ),
                 Row(
