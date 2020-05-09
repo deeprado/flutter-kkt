@@ -44,7 +44,7 @@ class _TabsState extends State<Tabs> {
           });
         },
         iconSize: 36.0, //icon的大小
-        fixedColor: Colors.red, //选中的颜色
+        fixedColor: Theme.of(context).accentColor, //选中的颜色
         type: BottomNavigationBarType.fixed, //配置底部tabs可以有多个按钮
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.widgets), title: Text("考试")),

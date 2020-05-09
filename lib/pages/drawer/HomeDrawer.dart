@@ -10,7 +10,7 @@ class HomeDrawerPage extends StatefulWidget {
 class _HomeDrawerPageState extends State<HomeDrawerPage> {
   @override
   Widget build(BuildContext context) {
-    var menus = Column(
+    var menus = ListView(
       children: <Widget>[
         Row(
           children: <Widget>[
