@@ -41,6 +41,9 @@ import 'package:kkt/pages/survey/SurveyCreate.dart';
 import 'package:kkt/pages/demo/EditorPage.dart';
 import 'package:kkt/pages/demo/FilePage.dart';
 import 'package:kkt/pages/demo/ShareSelectorPage.dart';
+import 'package:kkt/pages/demo/PlayMusic.dart';
+import 'package:kkt/pages/demo/VideoPage.dart';
+import 'package:kkt/pages/demo/PlayVideo.dart';
 
 // 配置路由
 final routes = {
@@ -64,8 +67,9 @@ final routes = {
   '/student/create': (context) => StudentCreatePage(),
   '/demo/file': (context) => FilePage(),
   '/demo/fluwx': (context) => ShareSelectorPage(),
-
-
+  '/demo/audio': (context) => PlayMusicPage(),
+  '/demo/video': (context) => VideoPage(),
+  '/demo/video/play': (context) => PlayVideoPage(),
   "/fluwx/shareText": (context) => ShareTextPage(),
   "/fluwx/shareImage": (context) => ShareImagePage(),
   "/fluwx/shareWebPage": (context) => ShareWebPagePage(),

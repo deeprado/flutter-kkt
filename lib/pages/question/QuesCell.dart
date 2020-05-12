@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:kkt/widget/player_widget.dart';
+
+const kUrl1 = 'https://luan.xyz/files/audio/ambient_c_motion.mp3';
+const kUrl2 = 'https://luan.xyz/files/audio/nasa_on_a_mission.mp3';
+const kUrl3 = 'http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1xtra_mf_p';
+
 class QuesCell extends StatefulWidget {
   QuesCell({Key key}) : super(key: key);
 
@@ -90,13 +96,14 @@ class _QuesCellState extends State<QuesCell> {
                         color: Colors.black87)),
               ],
             ),
-            Divider(),
             ExpansionTile(
               title: Text('aaaa'),
               trailing: Icon(Icons.chevron_right),
               children: <Widget>[
                 Column(
                   children: <Widget>[
+                    PlayerWidget(url: kUrl1),
+                    Divider(),
                     Row(
                       children: <Widget>[
                         Radio(

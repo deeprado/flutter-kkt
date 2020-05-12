@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:kkt/utils/screen_util.dart';
 
 import 'package:kkt/pages/drawer/HomeDrawer.dart';
+import 'package:kkt/pages/drawer/Menu.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -63,6 +64,13 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               print('search');
               // Navigator.pushNamed(context, '/search');
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print('search');
+              Navigator.pushNamed(context, '/tabs');
             },
           ),
           IconButton(
@@ -609,7 +617,10 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: new Drawer(
-        child: new HomeDrawerPage(),
+        child: new HomeDrawerPage(key: Key('1111')),
+      ),
+      endDrawer: new Drawer(
+        child: new MenuPage(key: Key('2222')),
       ),
     );
   }
