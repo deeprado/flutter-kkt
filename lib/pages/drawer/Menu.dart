@@ -12,29 +12,42 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     var menus = ListView(
       children: <Widget>[
-        Row(
-          children: <Widget>[
-            Expanded(
-                child: UserAccountsDrawerHeader(
-              accountName: Text("deepado"),
-              accountEmail: Text("2746143402@qq.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage:
-                    NetworkImage("https://www.itying.com/images/flutter/3.png"),
-              ),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                image:
-                    NetworkImage("https://www.itying.com/images/flutter/2.png"),
-                fit: BoxFit.cover,
-              )),
-              otherAccountsPictures: <Widget>[
-                Image.network("https://www.itying.com/images/flutter/4.png"),
-                Image.network("https://www.itying.com/images/flutter/5.png"),
-              ],
-            ))
+        UserAccountsDrawerHeader(
+          accountName: Text("deepado"),
+          accountEmail: Text("2746143402@qq.com"),
+          currentAccountPicture: CircleAvatar(
+            backgroundImage:
+                NetworkImage("https://www.itying.com/images/flutter/3.png"),
+          ),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+            image: NetworkImage("https://www.itying.com/images/flutter/2.png"),
+            fit: BoxFit.cover,
+          )),
+          otherAccountsPictures: <Widget>[
+            Image.network("https://www.itying.com/images/flutter/4.png"),
+            Image.network("https://www.itying.com/images/flutter/5.png"),
           ],
         ),
+        Divider(),
+        ListTile(
+          trailing: new Icon(Icons.arrow_right),
+          title: Text("组件示例"),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, '/demo/widght');
+          },
+        ),
+        Divider(),
+        ListTile(
+          trailing: new Icon(Icons.arrow_right),
+          title: Text("渐变进度"),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, '/demo/progress');
+          },
+        ),
+        Divider(),
         ListTile(
           trailing: new Icon(Icons.arrow_right),
           title: Text("音频播放"),
@@ -53,11 +66,9 @@ class _MenuPageState extends State<MenuPage> {
           },
         ),
         Divider(),
-        Expanded(
-          child: Container(
-            child: Image.asset("assets/images/fmenu_banner.png"),
-          ),
-        )
+        Container(
+          child: Image.asset("assets/images/fmenu_banner.png"),
+        ),
       ],
     );
     // var yy = SingleChildScrollView(

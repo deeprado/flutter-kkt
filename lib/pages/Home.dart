@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.share),
             onPressed: () {
-              Navigator.pushNamed(context, '/demo/fluwx');
+              Navigator.pushNamed(context, '/demo/video');
             },
           ),
           IconButton(
@@ -62,12 +62,11 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
-              print('search');
-              // Navigator.pushNamed(context, '/search');
+              Navigator.pushNamed(context, '/search');
             },
           ),
           IconButton(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.school),
             onPressed: () {
               print('search');
               Navigator.pushNamed(context, '/tabs');

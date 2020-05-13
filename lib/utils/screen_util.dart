@@ -17,8 +17,6 @@ class ScreenUtil {
 
   static double _textScaleFactor;
 
-  static bool _inited;
-
   ScreenUtil({int width, int height}) {
     _designWidth = width;
     _designHeight = height;
@@ -29,7 +27,6 @@ class ScreenUtil {
   }
 
   void init(BuildContext context) {
-    // if (!_inited) {
       MediaQueryData mediaQuery = MediaQuery.of(context);
       _mediaQueryData = mediaQuery;
       _pixelRatio = mediaQuery.devicePixelRatio;
@@ -38,8 +35,6 @@ class ScreenUtil {
       _statusBarHeight = mediaQuery.padding.top;
       _bottomBarHeight = _mediaQueryData.padding.bottom;
       _textScaleFactor = mediaQuery.textScaleFactor;
-      _inited = true;
-    // }
   }
 
   static MediaQueryData get mediaQueryData => _mediaQueryData;

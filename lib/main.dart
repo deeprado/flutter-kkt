@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluwx/fluwx.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'routes/Routes.dart';
 
@@ -33,7 +33,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     super.initState();
@@ -53,16 +52,52 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {}
 
+  Future<bool> _onWillPop() {
+    return showDialog(
+          context: context,
+          builder: (context) => new AlertDialog(
+            title: new Text('Are you sure?'),
+            content: new Text('Do you want to exit an App'),
+            actions: <Widget>[
+              new FlatButton(
+                onPressed: () => Navigator.of(context).pop(false),
+                child: new Text('No'),
+              ),
+              new FlatButton(
+                onPressed: () => Navigator.of(context).pop(true),
+                child: new Text('Yes'),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false, //去掉debug图标
-      initialRoute: '/', //初始化的时候加载的路由
-      onGenerateRoute: onGenerateRoute,
-      theme: new ThemeData(
-        brightness: Brightness.light,
-        primaryColor: Colors.blue,
-        accentColor: Colors.cyan[600],
+    DateTime lastTime;
+    return WillPopScope(
+      onWillPop: () async {
+        if (lastTime == null ||
+            DateTime.now().difference(lastTime) > Duration(seconds: 1)) {
+          lastTime = DateTime.now();
+          Fluttertoast.showToast(
+              msg: "双击退出",
+              gravity: ToastGravity.CENTER,
+              textColor: Colors.grey);
+          return false;
+        }
+        return true;
+      },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false, //去掉debug图标
+        initialRoute: '/', //初始化的时候加载的路由
+        onGenerateRoute: onGenerateRoute,
+        theme: new ThemeData(
+          brightness: Brightness.light,
+          primaryColor: Colors.blue,
+          accentColor: Colors.cyan[600],
+        ),
       ),
     );
   }
