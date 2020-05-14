@@ -52,6 +52,8 @@ dependencies:
   flutter_alipay: "^1.0.0"
   easy_alert: ^0.0.8
   jpush_flutter: 0.5.3
+  local_auth: ^0.6.2+2
+  get_it: ^4.0.2
   
 dev_dependencies:
   flutter_test:
