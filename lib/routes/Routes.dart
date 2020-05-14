@@ -44,6 +44,8 @@ import 'package:kkt/pages/demo/ShareSelectorPage.dart';
 import 'package:kkt/pages/demo/PlayMusic.dart';
 import 'package:kkt/pages/demo/VideoPage.dart';
 import 'package:kkt/pages/demo/PlayVideo.dart';
+import 'package:kkt/pages/demo/WidghtPage.dart';
+import 'package:kkt/pages/demo/GradientCircularProgressRoute.dart';
 
 // 配置路由
 final routes = {
@@ -65,6 +67,8 @@ final routes = {
   '/ques/create': (context) => QuesCreatePage(),
   '/survey/create': (context) => SurveyCreatePage(),
   '/student/create': (context) => StudentCreatePage(),
+  '/demo/progress': (context) => GradientCircularProgressRoute(),
+  '/demo/widght': (context) => WidghtPage(),
   '/demo/file': (context) => FilePage(),
   '/demo/fluwx': (context) => ShareSelectorPage(),
   '/demo/audio': (context) => PlayMusicPage(),

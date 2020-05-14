@@ -56,5 +56,16 @@
 	<string>请允许APP保存图片到相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>请允许APP访问您的相册</string>
+  <key>CFBundleURLTypes</key>
+  <array>
+      <dict>
+          <key>CFBundleTypeRole</key>
+          <string>Editor</string>
+          <key>CFBundleURLSchemes</key>
+          <array>
+              <string>org.zoomdev.flutter.alipay</string>
+          </array>
+      </dict>
+  </array>
 </dict>
 </plist>

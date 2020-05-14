@@ -11,6 +11,7 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     var menus = ListView(
+      padding: EdgeInsets.zero,
       children: <Widget>[
         UserAccountsDrawerHeader(
           accountName: Text("deepado"),
@@ -31,6 +32,33 @@ class _MenuPageState extends State<MenuPage> {
         ),
         ListTile(
           trailing: new Icon(Icons.arrow_right),
+          title: Text("首页"),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, '/');
+          },
+        ),
+        Divider(),
+        ListTile(
+          trailing: new Icon(Icons.arrow_right),
+          title: Text("组件示例"),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, '/demo/widght');
+          },
+        ),
+        Divider(),
+        ListTile(
+          trailing: new Icon(Icons.arrow_right),
+          title: Text("渐变进度"),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, '/demo/progress');
+          },
+        ),
+        Divider(),
+        ListTile(
+          trailing: new Icon(Icons.arrow_right),
           title: Text("音频播放"),
           onTap: () {
             Navigator.of(context).pop();
@@ -49,7 +77,7 @@ class _MenuPageState extends State<MenuPage> {
         Divider(),
         Container(
           child: Image.asset("assets/images/fmenu_banner.png"),
-        )
+        ),
       ],
     );
     return menus;

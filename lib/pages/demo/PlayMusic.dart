@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter/src/foundation/constants.dart';
 
 import 'package:kkt/widget/player_widget.dart';
 
@@ -33,10 +32,10 @@ class _PlayMusicPageState extends State<PlayMusicPage> {
   void initState() {
     super.initState();
 
-    if (kIsWeb) {
-      // Calls to Platform.isIOS fails on web
-      return;
-    }
+    // if (kIsWeb) {
+    //   // Calls to Platform.isIOS fails on web
+    //   return;
+    // }
     if (Platform.isIOS) {
       if (audioCache.fixedPlayer != null) {
         audioCache.fixedPlayer.startHeadlessService();

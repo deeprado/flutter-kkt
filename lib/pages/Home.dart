@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.share),
             onPressed: () {
-              Navigator.pushNamed(context, '/demo/fluwx');
+              Navigator.pushNamed(context, '/demo/video');
             },
           ),
           IconButton(
