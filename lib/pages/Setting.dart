@@ -24,23 +24,26 @@ class _SettingPageState extends State<SettingPage> {
     return [
       FLStaticSectionData(headerTitle: '账号', itemList: [
         FLStaticItemData(
-            title: '账号管理',
-            accessoryType: FLStaticListCellAccessoryType.accDetail,
-            cellColor: isDarkMode ? bgColor : Colors.white,
-            onTap: handleTap),
+          title: '账号管理',
+          accessoryType: FLStaticListCellAccessoryType.accDetail,
+          cellColor: isDarkMode ? bgColor : Colors.white,
+          onButtonPressed: handleTap,
+        ),
         FLStaticItemData(
-            title: '账号安全',
-            accessoryType: FLStaticListCellAccessoryType.accDetail,
-            cellColor: isDarkMode ? bgColor : Colors.white,
-            onTap: handleTap),
+          title: '账号安全',
+          accessoryType: FLStaticListCellAccessoryType.accDetail,
+          cellColor: isDarkMode ? bgColor : Colors.white,
+          onButtonPressed: handleTap,
+        ),
       ]),
       FLStaticSectionData(headerTitle: '设置', itemList: [
         FLStaticItemData(
-            title: '通知设置',
-            accessoryType: FLStaticListCellAccessoryType.accDetail,
-            cellColor: isDarkMode ? bgColor : Colors.white,
-            accessoryString: '通知全部',
-            onTap: handleTap),
+          title: '通知设置',
+          accessoryType: FLStaticListCellAccessoryType.accDetail,
+          cellColor: isDarkMode ? bgColor : Colors.white,
+          accessoryString: '通知全部',
+          onButtonPressed: handleTap,
+        ),
         FLStaticItemData(
           title: '护眼模式',
           accessoryType: FLStaticListCellAccessoryType.accSwitch,
@@ -53,27 +56,29 @@ class _SettingPageState extends State<SettingPage> {
           subtitle: '每10天清理一次',
           accessoryType: FLStaticListCellAccessoryType.accCheckmark,
           cellColor: isDarkMode ? bgColor : Colors.white,
-          onTap: handleTap,
+          onButtonPressed: handleTap,
           selected: true,
-        )
+        ),
       ]),
       FLStaticSectionData(itemList: [
         FLStaticItemData(
-            cellType: FLStaticListCellType.button,
-            buttonTitle: '保存',
-            buttonTitleColor: Colors.blue,
-            cellColor: isDarkMode ? bgColor : Colors.white,
-            onButtonPressed: () {
-              print('button pressed');
-            }),
+          cellType: FLStaticListCellType.button,
+          buttonTitle: '保存',
+          buttonTitleColor: Colors.blue,
+          cellColor: isDarkMode ? bgColor : Colors.white,
+          onButtonPressed: () {
+            print('button pressed');
+          },
+        ),
         FLStaticItemData(
-            cellType: FLStaticListCellType.button,
-            buttonTitle: '退出登录',
-            buttonTitleColor: Colors.red,
-            cellColor: isDarkMode ? bgColor : Colors.white,
-            onButtonPressed: () {
-              print('button pressed');
-            })
+          cellType: FLStaticListCellType.button,
+          buttonTitle: '退出登录',
+          buttonTitleColor: Colors.red,
+          cellColor: isDarkMode ? bgColor : Colors.white,
+          onButtonPressed: () {
+            print('button pressed');
+          },
+        )
       ])
     ];
   }

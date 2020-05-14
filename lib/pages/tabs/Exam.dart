@@ -19,6 +19,11 @@ class _ExamPageState extends State<ExamPage> {
           title: Text('考试管理'),
           bottom: TabBar(
             // isScrollable: true,
+            // labelColor: Colors.red,
+            indicatorColor: Colors.yellow,
+            labelStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
             tabs: [
               Tab(
                 text: '正式考试',
@@ -46,12 +51,14 @@ class _ExamPageState extends State<ExamPage> {
             ),
           ],
         ),
-        body: TabBarView(
-          children: [
-            ExamListPage(),
-            ExamListPage(),
-            ExamListPage(),
-          ],
+        body: SafeArea(
+          child: TabBarView(
+            children: [
+              ExamListPage(),
+              ExamListPage(),
+              ExamListPage(),
+            ],
+          ),
         ),
       ),
     );

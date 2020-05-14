@@ -8,10 +8,11 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("关于我们"),
-        ),
-        body: new CustomScrollView(
+      appBar: AppBar(
+        title: Text("关于我们"),
+      ),
+      body: SafeArea(
+        child: new CustomScrollView(
           shrinkWrap: true,
           // 内容
           slivers: <Widget>[
@@ -193,6 +194,8 @@ class AboutPage extends StatelessWidget {
               ),
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

@@ -225,30 +225,32 @@ class _StudentPageState extends State<StudentPage> {
       endDrawer: new Drawer(
         child: new StudentDrawerPage(),
       ),
-      body: new CustomScrollView(
-        shrinkWrap: true,
-        // 内容
-        slivers: <Widget>[
-          new SliverPadding(
-            padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-            sliver: new SliverList(
-              delegate: new SliverChildListDelegate(<Widget>[
-                StudentCell(),
-                SizedBox(
-                  height: 10,
-                ),
-                StudentCell(),
-                SizedBox(
-                  height: 10,
-                ),
-                StudentCell(),
-                SizedBox(
-                  height: 10,
-                ),
-              ]),
+      body: SafeArea(
+        child: new CustomScrollView(
+          shrinkWrap: true,
+          // 内容
+          slivers: <Widget>[
+            new SliverPadding(
+              padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+              sliver: new SliverList(
+                delegate: new SliverChildListDelegate(<Widget>[
+                  StudentCell(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  StudentCell(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  StudentCell(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                ]),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

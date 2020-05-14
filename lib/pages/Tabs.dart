@@ -7,7 +7,6 @@ import 'tabs/Student.dart';
 
 import 'drawer/TabDrawer.dart';
 
-
 class Tabs extends StatefulWidget {
   final index;
   Tabs({Key key, this.index = 0}) : super(key: key);
@@ -36,16 +35,16 @@ class _TabsState extends State<Tabs> {
       // ),
       body: this._pageList[this._currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: this._currentIndex, //配置对应的索引值选中
+        currentIndex: this._currentIndex, // 配置对应的索引值选中
         onTap: (int index) {
           setState(() {
-            //改变状态
+            // 改变状态
             this._currentIndex = index;
           });
         },
-        iconSize: 36.0, //icon的大小
-        fixedColor: Theme.of(context).accentColor, //选中的颜色
-        type: BottomNavigationBarType.fixed, //配置底部tabs可以有多个按钮
+        iconSize: 36.0, // icon的大小
+        fixedColor: Theme.of(context).accentColor, // 选中的颜色
+        type: BottomNavigationBarType.fixed, // 配置底部tabs可以有多个按钮
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.widgets), title: Text("考试")),
           BottomNavigationBarItem(
@@ -55,9 +54,7 @@ class _TabsState extends State<Tabs> {
           BottomNavigationBarItem(icon: Icon(Icons.group), title: Text("考生"))
         ],
       ),
-      drawer: Drawer(
-        child: new TabDrawerPage()
-      ),
+      drawer: Drawer(child: new TabDrawerPage()),
     );
   }
 }
