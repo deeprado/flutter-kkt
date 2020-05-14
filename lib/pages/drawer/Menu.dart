@@ -12,27 +12,21 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     var menus = ListView(
       children: <Widget>[
-        Row(
-          children: <Widget>[
-            Expanded(
-                child: UserAccountsDrawerHeader(
-              accountName: Text("deepado"),
-              accountEmail: Text("2746143402@qq.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage:
-                    NetworkImage("https://www.itying.com/images/flutter/3.png"),
-              ),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                image:
-                    NetworkImage("https://www.itying.com/images/flutter/2.png"),
-                fit: BoxFit.cover,
-              )),
-              otherAccountsPictures: <Widget>[
-                Image.network("https://www.itying.com/images/flutter/4.png"),
-                Image.network("https://www.itying.com/images/flutter/5.png"),
-              ],
-            ))
+        UserAccountsDrawerHeader(
+          accountName: Text("deepado"),
+          accountEmail: Text("2746143402@qq.com"),
+          currentAccountPicture: CircleAvatar(
+            backgroundImage:
+                NetworkImage("https://www.itying.com/images/flutter/3.png"),
+          ),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+            image: NetworkImage("https://www.itying.com/images/flutter/2.png"),
+            fit: BoxFit.cover,
+          )),
+          otherAccountsPictures: <Widget>[
+            Image.network("https://www.itying.com/images/flutter/4.png"),
+            Image.network("https://www.itying.com/images/flutter/5.png"),
           ],
         ),
         ListTile(
@@ -53,17 +47,11 @@ class _MenuPageState extends State<MenuPage> {
           },
         ),
         Divider(),
-        Expanded(
-          child: Container(
-            child: Image.asset("assets/images/fmenu_banner.png"),
-          ),
+        Container(
+          child: Image.asset("assets/images/fmenu_banner.png"),
         )
       ],
     );
-    // var yy = SingleChildScrollView(
-    //   physics: BouncingScrollPhysics(),
-    //   child: xx,
-    // );
     return menus;
   }
 }

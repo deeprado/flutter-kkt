@@ -62,21 +62,18 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
-              print('search');
-              // Navigator.pushNamed(context, '/search');
+              Navigator.pushNamed(context, '/search');
             },
           ),
           IconButton(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.layers),
             onPressed: () {
-              print('search');
               Navigator.pushNamed(context, '/tabs');
             },
           ),
           IconButton(
             icon: Icon(Icons.settings),
             onPressed: () {
-              print('settings');
               Navigator.pushNamed(context, '/user');
             },
           )
@@ -576,6 +573,7 @@ class _HomePageState extends State<HomePage> {
             sliver: new SliverList(
               delegate: new SliverChildListDelegate(<Widget>[
                 Container(
+                  width: ScreenUtil.screenWidth,
                   color: Colors.white,
                   child: Center(
                     child: Container(
@@ -588,6 +586,8 @@ class _HomePageState extends State<HomePage> {
                   height: 40,
                 ),
                 Container(
+                  width: ScreenUtil.screenWidth,
+                  color: Colors.white,
                   child: GridView.count(
                     shrinkWrap: true,
                     crossAxisCount: 2,
@@ -601,6 +601,7 @@ class _HomePageState extends State<HomePage> {
                   height: 30,
                 ),
                 Container(
+                  color: Colors.white,
                   child: Center(
                     child: Text(
                       ' -- 已经到底了 -- ',
