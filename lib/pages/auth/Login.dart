@@ -38,7 +38,8 @@ class _LoginPageState extends State<LoginPage> {
           title: widgetsUtils.getAppBar('登录'),
           iconTheme: new IconThemeData(color: Colors.white),
         ),
-        body: new Column(
+        body: SingleChildScrollView(
+            child: new Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -58,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: hintTips,
                 controller: _userNameController,
                 decoration: new InputDecoration(
-                    hintText: "请输入手机号", icon: Icon(Icons.ac_unit)),
+                    hintText: "请输入手机号", icon: Icon(Icons.phone)),
                 obscureText: false,
               ),
             ),
@@ -69,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: hintTips,
                 controller: _userPassController,
                 decoration: new InputDecoration(
-                    hintText: "请输入用户密码", icon: Icon(Icons.ac_unit)),
+                    hintText: "请输入用户密码", icon: Icon(Icons.place)),
                 obscureText: true,
               ),
             ),
@@ -133,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             )
           ],
-        ));
+        )));
   }
 
   _postLogin(String userName, String userPassword) {

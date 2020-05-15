@@ -32,7 +32,7 @@ class _BankPageState extends State<BankPage> {
                       style: hintTips,
                       controller: _bankNameController,
                       decoration: new InputDecoration(
-                          hintText: "请输入题库名称", icon: Icon(Icons.ac_unit)),
+                          hintText: "请输入题库名称", icon: Icon(Icons.local_offer)),
                       obscureText: false,
                     ),
                     actions: <Widget>[
@@ -59,30 +59,32 @@ class _BankPageState extends State<BankPage> {
           ),
         ],
       ),
-      body: new CustomScrollView(
-        shrinkWrap: true,
-        // 内容
-        slivers: <Widget>[
-          new SliverPadding(
-            padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-            sliver: new SliverList(
-              delegate: new SliverChildListDelegate(<Widget>[
-                BankCell(),
-                SizedBox(
-                  height: 10,
-                ),
-                BankCell(),
-                SizedBox(
-                  height: 10,
-                ),
-                BankCell(),
-                SizedBox(
-                  height: 10,
-                ),
-              ]),
+      body: SafeArea(
+        child: new CustomScrollView(
+          shrinkWrap: true,
+          // 内容
+          slivers: <Widget>[
+            new SliverPadding(
+              padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+              sliver: new SliverList(
+                delegate: new SliverChildListDelegate(<Widget>[
+                  BankCell(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  BankCell(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  BankCell(),
+                  SizedBox(
+                    height: 10,
+                  ),
+                ]),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

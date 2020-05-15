@@ -14,24 +14,25 @@ class _SurveyPageState extends State<SurveyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('问卷管理'),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.add),
-              onPressed: () {
-                Navigator.pushNamed(context, '/survey/create');
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {
-                Navigator.pushNamed(context, '/search');
-              },
-            ),
-          ],
-        ),
-        body: new CustomScrollView(
+      appBar: AppBar(
+        title: Text('问卷管理'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {
+              Navigator.pushNamed(context, '/survey/create');
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              Navigator.pushNamed(context, '/search');
+            },
+          ),
+        ],
+      ),
+      body: SafeArea(
+        child: new CustomScrollView(
           shrinkWrap: true,
           // 内容
           slivers: <Widget>[
@@ -55,6 +56,8 @@ class _SurveyPageState extends State<SurveyPage> {
               ),
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

@@ -15,6 +15,7 @@ import 'package:kkt/pages/fluwx/subscribe_message_page.dart';
 
 import 'package:kkt/pages/Tabs.dart';
 import 'package:kkt/pages/Home.dart';
+import 'package:kkt/pages/Setting.dart';
 
 import 'package:kkt/pages/User.dart';
 import 'package:kkt/pages/Profile.dart';
@@ -59,6 +60,7 @@ final routes = {
   '/editor': (context) => EditorPage(),
   '/search': (context) => SearchPage(),
   '/login': (context) => LoginPage(),
+  '/setting': (context) => SettingPage(),
   '/register': (context) => RegisterPage(),
   '/forgetPassword': (context) => ForgetPasswordPage(),
   '/exam/create': (context) => ExamCreatePage(),

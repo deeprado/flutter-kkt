@@ -289,6 +289,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.9"
+  get_it:
+    dependency: "direct main"
+    description:
+      name: get_it
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "4.0.2"
   glob:
     dependency: transitive
     description:
@@ -380,6 +387,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.3.0"
+  local_auth:
+    dependency: "direct main"
+    description:
+      name: local_auth
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.6.2+2"
   logging:
     dependency: transitive
     description:

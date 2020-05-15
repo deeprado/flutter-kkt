@@ -37,36 +37,48 @@ class _HelpPageState extends State<HelpPage> {
           ),
           title: Text('帮助中心'),
         ),
-        body: TabBarView(
-          children: [
-            Column(
-              children: <Widget>[
-                new NewsCell(
-                    title: 'aaaaaaa',
-                    describe: 'bbbbbbbbbbb',
-                    date: '2020/11/22',
-                    zanCount: '20',
-                    kanCount: '30'),
-                Divider(),
-                new NewsCell(
-                    title: 'aaaaaaa',
-                    describe: 'bbbbbbbbbbb',
-                    date: '2020/11/22',
-                    zanCount: '20',
-                    kanCount: '30'),
-                Divider(),
-                new NewsCell(
-                    title: 'aaaaaaa',
-                    describe: 'bbbbbbbbbbb',
-                    date: '2020/11/22',
-                    zanCount: '20',
-                    kanCount: '30'),
-              ],
-            ),
-            Icon(Icons.directions_car),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
-          ],
+        body: SafeArea(
+          child: TabBarView(
+            children: [
+              SingleChildScrollView(
+                  child: Column(
+                children: <Widget>[
+                  new NewsCell(
+                      title: 'aaaaaaa',
+                      describe: 'bbbbbbbbbbb',
+                      date: '2020/11/22',
+                      zanCount: '20',
+                      kanCount: '30'),
+                  Divider(),
+                  new NewsCell(
+                      title: 'aaaaaaa',
+                      describe: 'bbbbbbbbbbb',
+                      date: '2020/11/22',
+                      zanCount: '20',
+                      kanCount: '30'),
+                  Divider(),
+                  new NewsCell(
+                      title: 'aaaaaaa',
+                      describe: 'bbbbbbbbbbb',
+                      date: '2020/11/22',
+                      zanCount: '20',
+                      kanCount: '30'),
+                  SizedBox(
+                    height: 30,
+                  ),
+                ],
+              )),
+              SingleChildScrollView(
+                child: Icon(Icons.directions_car),
+              ),
+              SingleChildScrollView(
+                child: Icon(Icons.directions_transit),
+              ),
+              SingleChildScrollView(
+                child: Icon(Icons.directions_bike),
+              ),
+            ],
+          ),
         ),
       ),
     );

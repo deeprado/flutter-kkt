@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluwx/fluwx.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get_it/get_it.dart';
 
-import 'routes/Routes.dart';
-
-import 'utils/provider.dart';
-import 'utils/shared_preferences.dart';
+import 'package:kkt/app_model.dart';
+import 'package:kkt/routes/Routes.dart';
+import 'package:kkt/utils/provider.dart';
+import 'package:kkt/utils/shared_preferences.dart';
 
 SpUtil sp;
 var db;
+GetIt getIt = GetIt.instance;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,6 +25,8 @@ void main() async {
   //   SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   //   SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   // }
+  getIt.registerSingleton<AppModel>(AppModelImplementation(),
+      signalsReady: true);
 
   runApp(MyApp());
 }
@@ -35,9 +39,24 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
+    // Access the instance of the registered AppModel
+    // As we don't know for sure if AppModel is already ready we use getAsync
+    getIt
+        .isReady<AppModel>()
+        .then((_) => getIt<AppModel>().addListener(update));
+    // Alternative
+    // getIt.get<AppModel>().addListener(update);
     super.initState();
     _initFluwx();
   }
+
+  @override
+  void dispose() {
+    getIt<AppModel>().removeListener(update);
+    super.dispose();
+  }
+
+  update() => setState(() => {});
 
   _initFluwx() async {
     await registerWxApi(
@@ -89,15 +108,37 @@ class _MyAppState extends State<MyApp> {
         }
         return true;
       },
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false, //去掉debug图标
-        initialRoute: '/', //初始化的时候加载的路由
-        onGenerateRoute: onGenerateRoute,
-        theme: new ThemeData(
-          brightness: Brightness.light,
-          primaryColor: Colors.blue,
-          accentColor: Colors.cyan[600],
-        ),
+      child: FutureBuilder(
+        future: getIt.allReady(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false, // 去掉debug图标
+              initialRoute: '/', // 初始化的时候加载的路由
+              onGenerateRoute: onGenerateRoute,
+              theme: new ThemeData(
+                brightness: Brightness.light,
+                primaryColor: Colors.blue,
+                accentColor: Colors.cyan[600],
+              ),
+            );
+          } else {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  '等待初始化.....',
+                  textDirection: TextDirection.ltr,
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                CircularProgressIndicator(),
+              ],
+            );
+          }
+        },
       ),
     );
   }
