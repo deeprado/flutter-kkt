@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-// import 'package:flui/flui.dart';
 
 import 'package:kkt/utils/screen_util.dart';
 
 import 'package:kkt/pages/drawer/HomeDrawer.dart';
 import 'package:kkt/pages/drawer/Menu.dart';
+import 'package:kkt/localizations/DemoLocalizations.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       appBar: AppBar(
-        title: Text("快考题"),
+        title: Text(DemoLocalizations.of(context).appName),
         centerTitle: false,
         leading: IconButton(
           iconSize: 48,
@@ -521,7 +521,7 @@ class _HomePageState extends State<HomePage> {
                               width: ScreenUtil.screenWidth / 2,
                               child: RaisedButton(
                                 child: Text(
-                                  '免费创建',
+                                  DemoLocalizations.of(context).createExam,
                                   style: TextStyle(fontSize: 12),
                                 ),
                                 textColor: Colors.white,
@@ -554,12 +554,13 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             new SliverPadding(
-              padding: const EdgeInsets.fromLTRB(10, 40, 10, 20),
+              padding: const EdgeInsets.all(0),
               sliver: new SliverList(
                 delegate: new SliverChildListDelegate(<Widget>[
                   Container(
                     width: ScreenUtil.screenWidth,
                     color: Colors.white,
+                    height: 100,
                     child: Center(
                       child: Container(
                         width: ScreenUtil.screenWidth / 2,
@@ -596,17 +597,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(
                     height: 30,
-                  ),
-                  Container(
-                    child: Center(
-                      child: Text(
-                        ' -- 已经到底了 -- ',
-                        style: TextStyle(color: Colors.black54),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
                   ),
                 ]),
               ),
