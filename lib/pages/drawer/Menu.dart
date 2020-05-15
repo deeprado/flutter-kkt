@@ -30,6 +30,14 @@ class _MenuPageState extends State<MenuPage> {
             Image.network("https://www.itying.com/images/flutter/5.png"),
           ],
         ),
+        ListTile(
+          trailing: new Icon(Icons.arrow_right),
+          title: Text("首页"),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, '/');
+          },
+        ),
         Divider(),
         ListTile(
           trailing: new Icon(Icons.arrow_right),
@@ -67,15 +75,29 @@ class _MenuPageState extends State<MenuPage> {
           },
         ),
         Divider(),
+        ListTile(
+          trailing: new Icon(Icons.arrow_right),
+          title: Text("文件读写"),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, '/demo/file');
+          },
+        ),
+        Divider(),
+        ListTile(
+          trailing: new Icon(Icons.arrow_right),
+          title: Text("极光推送"),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, '/demo/jpush');
+          },
+        ),
+        Divider(),
         Container(
           child: Image.asset("assets/images/fmenu_banner.png"),
         ),
       ],
     );
-    // var yy = SingleChildScrollView(
-    //   physics: BouncingScrollPhysics(),
-    //   child: xx,
-    // );
     return menus;
   }
 }

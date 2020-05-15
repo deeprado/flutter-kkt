@@ -1,40 +1,33 @@
-import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:flutter/material.dart';
 
 class VideoPage extends StatefulWidget {
   VideoPage({Key key}) : super(key: key);
+
   @override
   _VideoPageState createState() => _VideoPageState();
 }
 
 class _VideoPageState extends State<VideoPage> {
-
   var url = 'http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4';
 
   VideoPlayerController _controller;
 
   @override
   void initState() {
-    _controller =
-        VideoPlayerController.network(url)
-          ..initialize().then((_) {
-            setState(() {
-              _controller.play();
-            });
-          });
-
-    // Use the controller to loop the video.
-    _controller.setLooping(true);
-
     super.initState();
+    
+    _controller = VideoPlayerController.network(url)
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
   }
 
   @override
   void dispose() {
-    // Ensure disposing of the VideoPlayerController to free up resources.
-    _controller.dispose();
-
     super.dispose();
+    _controller.dispose();
   }
 
   @override
@@ -49,16 +42,14 @@ class _VideoPageState extends State<VideoPage> {
                 aspectRatio: _controller.value.aspectRatio,
                 child: VideoPlayer(_controller),
               )
-            : CircularProgressIndicator(),
+            : Container(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            if (_controller.value.isPlaying) {
-              _controller.pause();
-            } else {
-              _controller.play();
-            }
+            _controller.value.isPlaying
+                ? _controller.pause()
+                : _controller.play();
           });
         },
         child: Icon(

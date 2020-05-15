@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class MyRichText extends StatefulWidget {
   MyRichText({
     Key key,
@@ -29,6 +28,7 @@ class _MyRichTextState extends State<MyRichText> {
   TextSpan parseText(String text) {
     // 耗时操作：解析文本字符串，构建出TextSpan。
     // 省略具体实现。
+    return TextSpan(text: text);
   }
 
 	@override

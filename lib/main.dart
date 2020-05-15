@@ -1,3 +1,5 @@
+import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluwx/fluwx.dart';
@@ -8,6 +10,7 @@ import 'package:kkt/app_model.dart';
 import 'package:kkt/routes/Routes.dart';
 import 'package:kkt/utils/provider.dart';
 import 'package:kkt/utils/shared_preferences.dart';
+import 'package:kkt/localizations/DemoLocalizationsDelegate.dart';
 
 SpUtil sp;
 var db;
@@ -75,16 +78,16 @@ class _MyAppState extends State<MyApp> {
     return showDialog(
           context: context,
           builder: (context) => new AlertDialog(
-            title: new Text('Are you sure?'),
-            content: new Text('Do you want to exit an App'),
+            title: new Text('确定吗?'),
+            content: new Text('是否退出应用'),
             actions: <Widget>[
               new FlatButton(
                 onPressed: () => Navigator.of(context).pop(false),
-                child: new Text('No'),
+                child: new Text('否'),
               ),
               new FlatButton(
                 onPressed: () => Navigator.of(context).pop(true),
-                child: new Text('Yes'),
+                child: new Text('是'),
               ),
             ],
           ),
@@ -116,6 +119,17 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false, // 去掉debug图标
               initialRoute: '/', // 初始化的时候加载的路由
               onGenerateRoute: onGenerateRoute,
+              localizationsDelegates: [
+                // ... app-specific localization delegate[s] here
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                DemoLocalizationsDelegate.delegate, //添加在此处
+              ],
+              supportedLocales: [
+                const Locale('zh', 'CH'),
+                const Locale('en', 'US'), // English
+                // ... other locales the app supports
+              ],
               theme: new ThemeData(
                 brightness: Brightness.light,
                 primaryColor: Colors.blue,

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import 'package:flutter/material.dart';
 // import 'package:flutter_alipay/flutter_alipay.dart';
 // import 'package:http/http.dart' as http;
