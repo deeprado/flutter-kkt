@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kkt/pages/demo/JPushPage.dart';
 
 import 'package:kkt/pages/fluwx/auth_by_qr_code_page.dart';
 import 'package:kkt/pages/fluwx/launch_mini_program_page.dart';
@@ -70,6 +71,7 @@ final routes = {
   '/survey/create': (context) => SurveyCreatePage(),
   '/student/create': (context) => StudentCreatePage(),
   '/demo/progress': (context) => GradientCircularProgressRoute(),
+  '/demo/jpush': (context) => JPushPage(),
   '/demo/widght': (context) => WidghtPage(),
   '/demo/file': (context) => FilePage(),
   '/demo/fluwx': (context) => ShareSelectorPage(),
