@@ -36,6 +36,7 @@ import 'package:kkt/pages/question/QuesCreate.dart';
 import 'package:kkt/pages/exam/ExamCreate.dart';
 
 import 'package:kkt/pages/student/StudentCreate.dart';
+import 'package:kkt/pages/student/StudentList.dart';
 
 import 'package:kkt/pages/survey/SurveyCreate.dart';
 
@@ -69,6 +70,7 @@ final routes = {
   '/ques/create': (context) => QuesCreatePage(),
   '/survey/create': (context) => SurveyCreatePage(),
   '/student/create': (context) => StudentCreatePage(),
+  '/student/list': (context) => StudentListPage(),
   '/demo/progress': (context) => GradientCircularProgressRoute(),
   '/demo/widght': (context) => WidghtPage(),
   '/demo/file': (context) => FilePage(),

@@ -1,20 +1,22 @@
+import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 // import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:kkt/utils/screen_util.dart';
+// import 'package:kkt/utils/screen_util.dart';
+import 'package:kkt/app/HttpRequest.dart';
 
 import 'package:kkt/pages/student/StudentCell.dart';
 import 'package:kkt/pages/drawer/StudentDrawer.dart';
 
 /// 考生
-///
 
 class StudentPage extends StatefulWidget {
   StudentPage({Key key}) : super(key: key);
@@ -26,6 +28,8 @@ class _StudentPageState extends State<StudentPage> {
   var hintTips = new TextStyle(fontSize: 15.0, color: Colors.black26);
   var _fieldNameController = new TextEditingController();
 
+  var studentList = [];
+
   @override
   void initState() {
     super.initState();
@@ -35,6 +39,79 @@ class _StudentPageState extends State<StudentPage> {
     PermissionHandler().requestPermissions(<PermissionGroup>[
       PermissionGroup.storage, // 在这里添加需要的权限
     ]);
+
+    // 获取考生
+    _getMoreData(1);
+  }
+
+  Future _getMoreData(int page) async {
+    Map<String, int> params = new Map();
+    params['page'] = page;
+
+    //
+    final studentUrl = 'http://localhost:9081/student/list';
+    HttpRequest.getHttp(studentUrl, parameters: params, onSuccess: (res) {
+      var data = json.decode(res);
+      setState(() {
+        studentList = data['data']['list'];
+      });
+      print('eeeeeeeeeeeeee');
+    }, onError: (error) {
+      print(error);
+    });
+  }
+
+  Widget buildStudents() {
+    List<Widget> studentEles = [];
+    for (var item in studentList) {
+      studentEles.add(StudentCell(item['id'], item['name'], item['mobile'],
+          item['avatar'], item['groupName']));
+      studentEles.add(SizedBox(
+        height: 10,
+      ));
+    }
+    return new SliverPadding(
+      padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+      sliver:
+          new SliverList(delegate: new SliverChildListDelegate(studentEles)),
+    );
+  }
+
+  Widget buildTestStudents() {
+    return new SliverPadding(
+      padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+      sliver: new SliverList(
+        delegate: new SliverChildListDelegate(<Widget>[
+          StudentCell(
+              1,
+              'aa',
+              'bb',
+              'https://up.enterdesk.com/edpic/a5/6d/7a/a56d7acfa5df7b8a30da143bddd290e2.jpg',
+              'ddd'),
+          SizedBox(
+            height: 10,
+          ),
+          StudentCell(
+              1,
+              'aa',
+              'bb',
+              'https://up.enterdesk.com/edpic/a5/6d/7a/a56d7acfa5df7b8a30da143bddd290e2.jpg',
+              'ddd'),
+          SizedBox(
+            height: 10,
+          ),
+          StudentCell(
+              1,
+              'aa',
+              'bb',
+              'https://up.enterdesk.com/edpic/a5/6d/7a/a56d7acfa5df7b8a30da143bddd290e2.jpg',
+              'ddd'),
+          SizedBox(
+            height: 10,
+          ),
+        ]),
+      ),
+    );
   }
 
   @override
@@ -43,6 +120,12 @@ class _StudentPageState extends State<StudentPage> {
       appBar: AppBar(
         title: Text('考生管理'),
         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.list),
+            onPressed: () {
+              Navigator.pushNamed(context, '/student/list');
+            },
+          ),
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
@@ -230,25 +313,8 @@ class _StudentPageState extends State<StudentPage> {
           shrinkWrap: true,
           // 内容
           slivers: <Widget>[
-            new SliverPadding(
-              padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-              sliver: new SliverList(
-                delegate: new SliverChildListDelegate(<Widget>[
-                  StudentCell(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  StudentCell(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  StudentCell(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                ]),
-              ),
-            ),
+            this.buildStudents(),
+            // this.buildTestStudents(),
           ],
         ),
       ),
