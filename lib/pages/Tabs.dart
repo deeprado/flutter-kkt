@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kkt/pages/drawer/Menu.dart';
 
 import 'tabs/Exam.dart';
 import 'tabs/Survey.dart';
@@ -55,6 +56,7 @@ class _TabsState extends State<Tabs> {
         ],
       ),
       drawer: Drawer(child: new TabDrawerPage()),
+      endDrawer: Drawer(child: new MenuPage()),
     );
   }
 }

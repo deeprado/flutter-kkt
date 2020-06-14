@@ -52,7 +52,7 @@ class _JPushPageState extends State<JPushPage> {
     }
 
     jpush.setup(
-      appKey: "e58a32cb3e4469ebf31867e5", //你自己应用的 AppKey
+      appKey: "90ca31f0de7a0cda6c006ee3", //你自己应用的 AppKey
       channel: "theChannel",
       production: false,
       debug: true,
@@ -84,9 +84,9 @@ class _JPushPageState extends State<JPushPage> {
     return new MaterialApp(
       home: new Scaffold(
         appBar: new AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('极光推送'),
         ),
-        body: new Center(
+        body: new SingleChildScrollView(
             child: new Column(children: [
           Container(
             margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -98,7 +98,7 @@ class _JPushPageState extends State<JPushPage> {
           new Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                new Text(" "),
+                new Text("aa"),
                 new CustomButton(
                     title: "发本地推送",
                     onPressed: () {
@@ -122,7 +122,7 @@ class _JPushPageState extends State<JPushPage> {
                         });
                       });
                     }),
-                new Text(" "),
+                new Text(" bb "),
                 new CustomButton(
                     title: "getLaunchAppNotification",
                     onPressed: () {
@@ -140,7 +140,7 @@ class _JPushPageState extends State<JPushPage> {
           new Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                new Text(" "),
+                new Text(" cc "),
                 new CustomButton(
                     title: "setTags",
                     onPressed: () {
@@ -155,7 +155,7 @@ class _JPushPageState extends State<JPushPage> {
                         });
                       });
                     }),
-                new Text(" "),
+                new Text(" dd "),
                 new CustomButton(
                     title: "addTags",
                     onPressed: () {
@@ -170,7 +170,7 @@ class _JPushPageState extends State<JPushPage> {
                         });
                       });
                     }),
-                new Text(" "),
+                new Text(" ee "),
                 new CustomButton(
                     title: "deleteTags",
                     onPressed: () {
@@ -189,7 +189,7 @@ class _JPushPageState extends State<JPushPage> {
           new Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                new Text(" "),
+                new Text(" ff "),
                 new CustomButton(
                     title: "getAllTags",
                     onPressed: () {
@@ -203,7 +203,7 @@ class _JPushPageState extends State<JPushPage> {
                         });
                       });
                     }),
-                new Text(" "),
+                new Text(" gg "),
                 new CustomButton(
                     title: "cleanTags",
                     onPressed: () {
@@ -222,7 +222,7 @@ class _JPushPageState extends State<JPushPage> {
           new Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                new Text(" "),
+                new Text(" ii "),
                 new CustomButton(
                     title: "setAlias",
                     onPressed: () {
@@ -236,7 +236,7 @@ class _JPushPageState extends State<JPushPage> {
                         });
                       });
                     }),
-                new Text(" "),
+                new Text(" jj "),
                 new CustomButton(
                     title: "deleteAlias",
                     onPressed: () {
@@ -254,13 +254,13 @@ class _JPushPageState extends State<JPushPage> {
           new Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Text(" "),
+              new Text(" ll "),
               new CustomButton(
                   title: "stopPush",
                   onPressed: () {
                     jpush.stopPush();
                   }),
-              new Text(" "),
+              new Text(" mm "),
               new CustomButton(
                   title: "resumePush",
                   onPressed: () {
@@ -271,13 +271,13 @@ class _JPushPageState extends State<JPushPage> {
           new Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Text(" "),
+              new Text(" nn "),
               new CustomButton(
                   title: "clearAllNotifications",
                   onPressed: () {
                     jpush.clearAllNotifications();
                   }),
-              new Text(" "),
+              new Text(" oo "),
               new CustomButton(
                   title: "setBadge",
                   onPressed: () {
@@ -296,7 +296,7 @@ class _JPushPageState extends State<JPushPage> {
           new Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Text(" "),
+              new Text(" pp "),
               new CustomButton(
                   title: "通知授权是否打开",
                   onPressed: () {
@@ -310,7 +310,7 @@ class _JPushPageState extends State<JPushPage> {
                       });
                     });
                   }),
-              new Text(" "),
+              new Text(" qq "),
               new CustomButton(
                   title: "打开系统设置",
                   onPressed: () {
