@@ -1,11 +1,11 @@
-import 'dart:io';
-import 'package:dio/dio.dart';
+// import 'dart:io';
+// import 'package:dio/dio.dart';
 
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 
-import 'package:kkt/utils/net/Http.dart';
+// import 'package:kkt/utils/net/Http.dart';
 
 class ExamCreatePage extends StatefulWidget {
   ExamCreatePage({Key key}) : super(key: key);
@@ -1085,20 +1085,20 @@ class _ExamCreatePageState extends State<ExamCreatePage> {
   }
 
   // 上传图片
-  _uploadImage(File image) async {
-    String filePath = image.path;
-    String filename =
-        filePath.substring(filePath.lastIndexOf("/") + 1, filePath.length);
+  // _uploadImage(File image) async {
+  //   String filePath = image.path;
+  //   String filename =
+  //       filePath.substring(filePath.lastIndexOf("/") + 1, filePath.length);
 
-    FormData formdata = FormData.fromMap(
-        {"file": await MultipartFile.fromFile(filePath, filename: filename)});
+  //   FormData formdata = FormData.fromMap(
+  //       {"file": await MultipartFile.fromFile(filePath, filename: filename)});
 
-    var respone = await Http.upload("/upload", formdata: formdata);
-    if (respone.statusCode == 200) {
-      Fluttertoast.showToast(
-          msg: "图片上传成功", 
-          gravity: ToastGravity.CENTER, 
-          textColor: Colors.grey);
-    }
-  }
+  //   var respone = await Http.upload("/upload", formdata: formdata);
+  //   if (respone.statusCode == 200) {
+  //     Fluttertoast.showToast(
+  //         msg: "图片上传成功", 
+  //         gravity: ToastGravity.CENTER, 
+  //         textColor: Colors.grey);
+  //   }
+  // }
 }

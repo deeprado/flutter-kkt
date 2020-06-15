@@ -798,7 +798,7 @@ class _UserPageState extends State<UserPage>
     }
     // 当前滑动距离
     double currentExtent = scroll.metrics.pixels;
-    double maxExtent = scroll.metrics.maxScrollExtent;
+    // double maxExtent = scroll.metrics.maxScrollExtent;
 
     print('当前滑动距离 ${currentExtent} ${currentExtent - _lastScrollPixels}');
 

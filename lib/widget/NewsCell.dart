@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class NewsCell extends StatefulWidget {
   final String title;
-  final  String describe;
+  final String describe;
   final String date;
-  final  String kanCount;
+  final String kanCount;
   final String zanCount;
 
   NewsCell(
