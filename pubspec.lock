@@ -684,13 +684,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.6"
-  upush:
-    dependency: "direct main"
-    description:
-      name: upush
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.1.1"
   url_launcher:
     dependency: "direct main"
     description:

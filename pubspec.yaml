@@ -55,7 +55,7 @@ dependencies:
   jpush_flutter: 0.5.3
   local_auth: ^0.6.2+2
   get_it: ^4.0.2
-  upush: ^0.1.1
+  # upush: ^0.1.1
   flutter_app_badger: ^1.1.2
   
 dev_dependencies:
