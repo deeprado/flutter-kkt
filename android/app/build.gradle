@@ -40,6 +40,11 @@ android {
         disable 'InvalidPackage'
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.kkt"
@@ -62,16 +67,19 @@ android {
             UMENG_APPKEY : "@5ebe2b99895cca56d1000330",
             UMENG_MESSAGE_SECRET : "@62d2dc178b43015524f7c31c29b03435",
             UMENG_CHANNEL : "UMENG",
-            XIAOMI_APPID : "",
-            XIAOMI_APPKEY : "",
-            VIVO_APPKEY : "",
-            VIVO_APPID : "",
-            OPPO_APPSECRET : "",//没有申请OPPO推送，就放空处理
-            OPPO_APPKEY : "",//没有申请OPPO推送，就放空处理
-            HUAWEI_APPID :"",
-            MEIZU_APPID :"",
-            MEIZU_APPKEY : ""
+            XIAOMI_APPID : "@aaaa",
+            XIAOMI_APPKEY : "@aaaa",
+            VIVO_APPKEY : "@bbbb",
+            VIVO_KEY : "@bbbb",
+            VIVO_APPID : "@bbbb",
+            OPPO_APPSECRET : "@cccc",//没有申请OPPO推送，就放空处理
+            OPPO_APPKEY : "@cccc",//没有申请OPPO推送，就放空处理
+            HUAWEI_APPID :"@dddd",
+            MEIZU_APPID :"@eeee",
+            MEIZU_APPKEY : "@eeee"
         ]
+
+        multiDexEnabled true
     }
 
     signingConfigs {
@@ -110,4 +118,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    implementation 'com.android.support:multidex:1.0.3'
 }

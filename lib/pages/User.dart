@@ -912,7 +912,6 @@ class _UserPageState extends State<UserPage>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 //    WidgetsBinding.instance.addPostFrameCallback(_afterLayout);
 
@@ -922,7 +921,9 @@ class _UserPageState extends State<UserPage>
 
     pullLoadWidgetControl.dataList = myData;
 //    getIndexListData(1);
-    setState(() => {pullLoadWidgetControl.needLoadMore = false});
+    setState(() {
+      pullLoadWidgetControl.needLoadMore = false;
+    });
     // getIndexListData(1);
   }
 
@@ -934,7 +935,6 @@ class _UserPageState extends State<UserPage>
 
   @override
   void setState(fn) {
-    // TODO: implement setState
     super.setState(fn);
   }
 
@@ -955,7 +955,7 @@ class TopItem extends StatelessWidget {
   final double topBarOpacity;
   final int productNum;
   final Widget contentWidget;
-  double _topBarHeight = 48;
+  final double _topBarHeight = 48;
   BuildContext _context;
 
   TopItem(

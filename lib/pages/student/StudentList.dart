@@ -3,12 +3,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 
-import 'package:permission_handler/permission_handler.dart';
-
 import 'package:kkt/app/HttpRequest.dart';
-
 import 'package:kkt/pages/student/StudentCell.dart';
-import 'package:kkt/pages/drawer/StudentDrawer.dart';
 
 /// 考生
 
@@ -70,9 +66,9 @@ class _StudentListPageState extends State<StudentListPage> {
   ScrollController _scrollController = new ScrollController();
 
   // 定义两个加padding方法
-  Widget _pada(Widget widget, var value) {
-    return new Padding(padding: EdgeInsets.all(value), child: widget);
-  }
+  // Widget _pada(Widget widget, var value) {
+  //   return new Padding(padding: EdgeInsets.all(value), child: widget);
+  // }
 
   Widget _pad(Widget widget, {l, t, r, b}) {
     return new Padding(
@@ -108,6 +104,7 @@ class _StudentListPageState extends State<StudentListPage> {
 
   @override
   void initState() {
+    super.initState();
     // 在初始化状态中 准备第一页数据
     _getMoreData(pageCount);
 

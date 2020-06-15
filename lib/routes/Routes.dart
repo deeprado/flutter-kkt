@@ -49,6 +49,7 @@ import 'package:kkt/pages/demo/VideoPage.dart';
 import 'package:kkt/pages/demo/PlayVideo.dart';
 import 'package:kkt/pages/demo/WidghtPage.dart';
 import 'package:kkt/pages/demo/GradientCircularProgressRoute.dart';
+import 'package:kkt/pages/demo/Badger.dart';
 
 // 配置路由
 final routes = {
@@ -77,6 +78,7 @@ final routes = {
   '/demo/widght': (context) => WidghtPage(),
   '/demo/file': (context) => FilePage(),
   '/demo/fluwx': (context) => ShareSelectorPage(),
+  '/demo/badger': (context) => BadgerPage(),
   '/demo/audio': (context) => PlayMusicPage(),
   '/demo/video': (context) => VideoPage(),
   '/demo/video/play': (context) => PlayVideoPage(),
@@ -95,6 +97,7 @@ final routes = {
 };
 
 // 固定写法
+// ignore: strong_mode_top_level_function_literal_block
 var onGenerateRoute = (RouteSettings settings) {
   // 统一处理
   final String name = settings.name;

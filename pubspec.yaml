@@ -36,7 +36,7 @@ dependencies:
   event_bus: "^1.1.1"
   provider: ^3.0.0
   quill_delta: 1.0.2
-  zefyr: ^0.10.0
+  zefyr: ^0.11.0
   package_info: ^0.4.0+3
   flutter_statusbarcolor: ^0.2.0
   cached_network_image: ^2.2.0
@@ -56,7 +56,8 @@ dependencies:
   local_auth: ^0.6.2+2
   get_it: ^4.0.2
   upush: ^0.0.1
-
+  flutter_app_badger: ^1.1.2
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

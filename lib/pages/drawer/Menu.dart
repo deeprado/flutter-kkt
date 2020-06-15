@@ -93,6 +93,15 @@ class _MenuPageState extends State<MenuPage> {
           },
         ),
         Divider(),
+        ListTile(
+          trailing: new Icon(Icons.arrow_right),
+          title: Text("通知图标"),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, '/demo/badger');
+          },
+        ),
+        Divider(),
         Container(
           child: Image.asset("assets/images/fmenu_banner.png"),
         ),

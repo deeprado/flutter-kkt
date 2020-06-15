@@ -4,7 +4,6 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 // import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -322,26 +321,26 @@ class _StudentPageState extends State<StudentPage> {
   }
 
   // 申请权限
-  Future<bool> _checkPermission() async {
-    // 先对所在平台进行判断
-    if (Theme.of(context).platform == TargetPlatform.android) {
-      PermissionStatus permission = await PermissionHandler()
-          .checkPermissionStatus(PermissionGroup.storage);
-      if (permission != PermissionStatus.granted) {
-        Map<PermissionGroup, PermissionStatus> permissions =
-            await PermissionHandler()
-                .requestPermissions([PermissionGroup.storage]);
-        if (permissions[PermissionGroup.storage] == PermissionStatus.granted) {
-          return true;
-        }
-      } else {
-        return true;
-      }
-    } else {
-      return true;
-    }
-    return false;
-  }
+  // Future<bool> _checkPermission() async {
+  //   // 先对所在平台进行判断
+  //   if (Theme.of(context).platform == TargetPlatform.android) {
+  //     PermissionStatus permission = await PermissionHandler()
+  //         .checkPermissionStatus(PermissionGroup.storage);
+  //     if (permission != PermissionStatus.granted) {
+  //       Map<PermissionGroup, PermissionStatus> permissions =
+  //           await PermissionHandler()
+  //               .requestPermissions([PermissionGroup.storage]);
+  //       if (permissions[PermissionGroup.storage] == PermissionStatus.granted) {
+  //         return true;
+  //       }
+  //     } else {
+  //       return true;
+  //     }
+  //   } else {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 
   // 获取存储路径
   Future<String> _findLocalPath() async {
