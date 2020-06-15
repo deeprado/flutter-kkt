@@ -58,6 +58,19 @@ android {
             JPUSH_PKGNAME : applicationId,
             JPUSH_APPKEY : "90ca31f0de7a0cda6c006ee3", // NOTE: JPush 上注册的包名对应的 Appkey.
             JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+
+            UMENG_APPKEY : "@5ebe2b99895cca56d1000330",
+            UMENG_MESSAGE_SECRET : "@62d2dc178b43015524f7c31c29b03435",
+            UMENG_CHANNEL : "UMENG",
+            XIAOMI_APPID : "",
+            XIAOMI_APPKEY : "",
+            VIVO_APPKEY : "",
+            VIVO_APPID : "",
+            OPPO_APPSECRET : "",//没有申请OPPO推送，就放空处理
+            OPPO_APPKEY : "",//没有申请OPPO推送，就放空处理
+            HUAWEI_APPID :"",
+            MEIZU_APPID :"",
+            MEIZU_APPKEY : ""
         ]
     }
 
